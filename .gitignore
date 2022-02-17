@@ -13,5 +13,8 @@ yarn-error.log*
 .env
 .env.production
 
+# private stuff
+.private
+
 # macOS-specific files
 .DS_Store

@@ -8,6 +8,18 @@ let posts = Astro.fetchContent("./log/*.md")
 		post.description = post.description ?? post.title;
 		return post;
 	});
+
+let sites = [
+	{ text: "jennmoney.biz" },
+	{ text: "programmingisterrible.com" },
+	{ text: "jvns.ca" },
+	{ text: "hillelwayne.com" },
+	{ text: "copyconstruct.medium.com" },
+	{ text: "fasterthanli.me" },
+	{ text: "lexi-lambda.github.io" },
+	{ text: "danluu.com" },
+	{ text: "vicki.substack.com", url:"https://vicki.substack.com/people/919000-vicki-boykis" },
+];
 ---
 
 <html lang="en">
@@ -16,20 +28,12 @@ let posts = Astro.fetchContent("./log/*.md")
 	</head>
 	<body>
 		<h1>brianloveswords</h1>
-		<h2>logs</h2>
 		<ul>
 			{ posts.map(post => <BlogIndexLine post={post}/>) }
 		</ul>
 		<h2>websites I like</h2>
 		<ul>
-			<li><a href="https://copyconstruct.medium.com/">copyconstruct.medium.com</a></li>
-			<li><a href="https://danluu.com/">danluu.com</a></li>
-			<li><a href="https://fasterthanli.me/">fasterthanli.me</a></li>
-			<li><a href="https://www.hillelwayne.com/">hillelwayne.com</a></li>
-			<li><a href="https://jvns.ca/">jvns.ca</a></li>
-			<li><a href="https://lexi-lambda.github.io/">lexi-lambda.github.io</a></li>
-			<li><a href="https://programmingisterrible.com/">programmingisterrible.com</a></li>
-			<li><a href="https://vicki.substack.com/people/919000-vicki-boykis">vicki.substack.com</a></li>
+			{ sites.map(site => <li><a href={site.url ?? `https://${site.text}`}>{site.text}</a></li>) }
 		</ul>
 		<h2>other places where I'm me</h2>
 		<ul>
