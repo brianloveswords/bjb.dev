@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: crashing with Astro
 description: touch fuzzy get dizzy
 publishDate: 2022-02-17
-version: 4
+version: 5
 ---
 
 _Currently listening to: [MØL – Diorama](https://moeldk.bandcamp.com/album/diorama)_
@@ -72,7 +72,7 @@ I ran the fuzzer against `0.23.0-next.9` and as it turns out this is fixed! Clea
 
 I ran into a few other bugs that I didn't write about here that were not as interesting, but even still this isn't close to the worst experience I've had trying out a piece of software and this post is not trying to slam the Astro devs. I am a Spiders Georg of software bugs, an outlier who should not be counted. Everything[^vscode] I touch[^obsidian] breaks[^docker] nearly immediately just trying to use it normally (well, normal for me).
 
-[^obsidian]: I'm drafting this post in Obsidian and I've had to force-refresh it about 5 times because it keeps, I don't know how to describe it, eating the text I write? I type but the cursor doesn't move and when I click somewhere else the text goes away. I think this started when I added **Appendix C** but I'm not entirely sure.
+[^obsidian]: I'm drafting this post in Obsidian and I've had to force-refresh it about 5 times because it keeps, I don't know how to describe it, eating the text I write? I type, text shows up, but the cursor doesn't move and when I click somewhere else the text goes away. I think this started when I added **Appendix C** but I'm not entirely sure.
 
 [^docker]: If I keep Docker for Mac open, it does something weird to my _sound_. I don't know why Docker is messing with sound subsystems at all, but it causes my sound to cut in and out unless I `killall -9 coreaudio` every once in a while.
 
