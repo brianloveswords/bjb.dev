@@ -25,7 +25,7 @@ I removed stuff until I got it building, then added stuff back until it broke ag
 
 Nothing was adding up. I'd make some tag changes, add some more multibyte, take some away—the failures seemed random. I started to worry this bug was either non-deterministic or based on hidden persisted state, like a build cache I didn't know about.
 
-Then I had a thought: what if there is no relationship to _my specific content_? I reverted back to what I started with and just started replacing the contents of the file, byte by byte, with `x`s.
+Then I had a thought: what if there is no relationship to _my specific content_? I reverted back to what I started with and began replacing the contents of the file, byte by byte, with `x`s.
 
 This intuition proved correct: the crash had nothing to do with the semantics of the file _at all_, the code path that triggered it was completely determined by the number of bytes in the file. So I wrote a lil fuzzer (see **Appendix A**) to write an increasing number of bytes to  `src/pages/index.astro` and keep track of where it started failing. I let it run for a few hours and the results were fascinating:
 
