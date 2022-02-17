@@ -55,7 +55,7 @@ If I were developing Astro (and maybe I'll try to contribute if I decide to stic
 
 In the JavaScript/TypeScript ecosystem, [`fast-check`](https://github.com/dubzzz/fast-check) is by far the best library for property-based testing. If you write either of these languages for fun or profit and you haven't tried out `fast-check`, please stop reading my dumb words go check it out.
 
-As far as that `nil pointer derefence`, it sure does smell an awful lot like Go. As of `1.18` [fuzzing is part of the standard tooling](https://go.dev/doc/fuzz/). I don't know what part of the Astro toolchain is written in Go, but it could probably benefit from some fuzzing.
+As far as that `nil pointer derefence`, sure does smell an awful lot like Go. As of `1.18` [fuzzing is part of the standard tooling](https://go.dev/doc/fuzz/). I don't know what part of the Astro toolchain is written in Go, but it could probably benefit from some fuzzing.
 
 Even without any special tools or frameworks, there's big payoff to writing code that generates tests. I almost don't wanna call what I wrote for this exploration a "fuzzer" because it's deterministically testing a very specific part of the state space, but even with relatively low effort this method found (at least) four distinct code paths that have unexpected behavior!
 
