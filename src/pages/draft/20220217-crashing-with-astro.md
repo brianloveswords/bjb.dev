@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: crashing with Astro
-publishDate: 2022-02-17 13:33:00
+publishDate: 2022-02-17
 ---
 
 _Currently listening to: [MØL – Diorama](https://moeldk.bandcamp.com/album/diorama)_
 
-I mentioned in my last post that [Astro](https://astro.build) might be a good fit for what I'm looking for in a static site generator so I decided, I don't have a ton of content, might as well just go all in and port the whole thing over, see how it goes.
+I mentioned in my last post that [Astro](https://astro.build) might be a good fit for what I'm looking for in a static site generator so I figured I don't have a ton of content, might as well just go all in and port the whole thing over and see how it goes.
 
-I began porting over the templates and content from my current site and at some point `npm run build` started blowing up. I didn't notice this right away because the live server started by  `npm run dev` worked more-or-less fine, it would only give me errors when I restarted the process or ran `npm run build`.
+I began converting the templates and content from my current site and at some point `npm run build` started blowing up. I didn't notice this right away because the live server started by  `npm run dev` worked more-or-less fine, it would only give me errors when I restarted the process or ran `npm run build`.
 
 ## semver is a lie we tell ourselves and each other
 
