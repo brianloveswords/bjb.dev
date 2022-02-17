@@ -3,6 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: crashing with Astro
 description: touch fuzzy get dizzy
 publishDate: 2022-02-17
+version: 2
 ---
 
 _Currently listening to: [MØL – Diorama](https://moeldk.bandcamp.com/album/diorama)_
@@ -13,7 +14,7 @@ I began converting the templates and content from my current site and at some po
 
 ## semver is a lie we tell ourselves and each other
 
-I _kinda_ knew what I was getting into—it's pre-1.0 software, and they then again the stability of pre-1.0 versions ranges from "crashes every third time you run it" to "rock solid" because semver is a lie we all pretend to believe in so we can maintain the illusion that version numbers have any meaning beyond "number got bigger".
+The version I'm using is `0.22.20`. The stability of pre-1.0 versions ranges from "crashes every third time you run it" to "rock solid" because semver is a lie we all pretend to believe in so we can maintain the illusion that version numbers have any meaning beyond "number got bigger".
 
 My heuristic for judging project stability and how much I should prepare for a broken experience does not include project version: it's almost entirely based on the quality of documentation. In this case, I found the docs to be pretty good, and even found this reassuring quote on the [Comparing Astro](https://docs.astro.build/en/comparing-astro-vs-other-tools/) page that's relevant (emphasis mine):
 
