@@ -6,6 +6,7 @@ export interface Post {
 	description: string;
 	title: string;
 	publishDate: string;
+	sizeWarning?: string;
 }
 
 export interface Props {
@@ -20,6 +21,14 @@ const { url, publishDate, description } = post
 	font-family: monospace;
 }
 
+.size-warning {
+	opacity: 0.5;
+}
+
+.size-warning:before {
+	content: '⚠️ ';
+}
+
 a {
 	padding-left: 0.5em;
 }
@@ -27,4 +36,5 @@ a {
 <li class="log-line">
 	<span class="date">{formatDate(publishDate)}</span>
 	<a href={url}><em>{description}</em></a>
+	{post.sizeWarning && <span class="size-warning">{post.sizeWarning}</span>}
 </li>
