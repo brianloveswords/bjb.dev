@@ -1,31 +1,19 @@
 ---
+import BlogHeader from "./BlogHeader.astro";
+
 export interface Props {
 	title: string;
 	publishDate: string;
 	listening: string;
-	permalink: string;
 }
 
-let { title, publishDate, listening, permalink } = Astro.props;
-
-if (publishDate?.constructor === Date) {
-	publishDate = publishDate.toISOString().slice(0, 10)
-}
-else if (publishDate.length > 10) {
-	publishDate = publishDate.slice(0, 10)
-}
-
+let { title, publishDate, listening } = Astro.props;
 ---
 
 <div class="layout">
 	<article class="content">
 		<main>
-			<header>
-				<h1>{title}</h1>
-				<h2><a href={permalink}>{publishDate}</a></h2>
-				{listening && <h3>{listening}</h3>}
-			</header>
-
+			<BlogHeader {title} {publishDate} {listening} />
 			<slot />
 		</main>
 	</article>

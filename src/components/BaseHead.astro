@@ -1,11 +1,12 @@
 ---
+import { getCanonicalURL } from "../util"
 export interface Props {
 	title: string;
 	description: string;
-	baseUrl: string;
-	permalink: string;
+	baseURL: string;
 }
-const { title, description, permalink, baseUrl } = Astro.props;
+const { title, description, baseUrl } = Astro.props;
+let canonicalURL = getCanonicalURL();
 ---
 
 <!-- Global Metadata -->
@@ -20,7 +21,7 @@ const { title, description, permalink, baseUrl } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={permalink} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description ?? title} />
 <meta property="og:site_name" content="brianloveswords" />
@@ -28,7 +29,7 @@ const { title, description, permalink, baseUrl } = Astro.props;
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={permalink} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description ?? title} />
 <meta property="twitter:image" content={`${baseUrl}/assets/brian-kittens.jpg`} />

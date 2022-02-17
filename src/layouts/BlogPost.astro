@@ -2,24 +2,23 @@
 import BaseHead from '../components/BaseHead.astro';
 import BlogPost from '../components/BlogPost.astro';
 import BlogFooter from '../components/BlogFooter.astro';
-import { baseUrl } from "../meta"
+import { baseURL } from "../meta"
+import { cleanDate } from "../util"
 
-const { content } = Astro.props;
-const { title, description, publishDate, listening, slug } = content;
-const permalink = `${baseUrl}/log/${slug}`;
+let { content } = Astro.props;
+let { title, description, publishDate, listening, slug } = content;
 ---
 
 <html lang={content.lang ?? 'en'}>
 	<head>
-		<BaseHead {title} {description ?? title} {permalink} {baseUrl} />
+		<BaseHead {title} {description ?? title} {baseURL} />
 	</head>
 
 	<body>
-		<div class="wrapper">
-			<BlogPost {title} {publishDate} {permalink} {listening}>
-				<slot />
-			</BlogPost>
-			<BlogFooter />
-		</div>
+
+		<BlogPost {title} {publishDate} {listening}>
+			<slot />
+		</BlogPost>
+		<BlogFooter />
 	</body>
 </html>

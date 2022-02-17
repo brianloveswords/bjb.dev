@@ -3,7 +3,6 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro'
 title: cats, todo, and parsing
 publishDate: 2020-11-21
-slug: 20201122-cats-todo-and-parsing
 ---
 
 ## What I’m listening to
