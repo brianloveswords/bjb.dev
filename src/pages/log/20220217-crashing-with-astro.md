@@ -27,7 +27,7 @@ Nothing was adding up. I'd make some tag changes, add some more multibyte, take 
 
 Then I had a thought: what if there is no relationship to _my specific content_? I reverted back to what I started with and began replacing the contents of the file, byte by byte, with `x`s.
 
-This intuition proved correct: the crash had nothing to do with the semantics of the file _at all_, the code path that triggered it was completely determined by the number of bytes in the file. So I wrote a lil fuzzer (see **Appendix A**) to write an increasing number of bytes to  `src/pages/index.astro` and keep track of where it started failing. I let it run for a few hours and the results were fascinating:
+This intuition proved correct, the crash had nothing to do with the semantics of the file _at all_. The code path that triggered it was completely determined by the number of bytes in the file. So I wrote a lil fuzzer (see **Appendix A**) to write an increasing number of bytes to  `src/pages/index.astro` and keep track of where it started failing. I let it run for a few hours and the results were fascinating:
 
 - `0000-2912` bytes: 🆗
 - `2913-2928` bytes: `RuntimeError: Error: Uh oh, the Astro compiler encountered an unrecoverable error!`
@@ -57,7 +57,7 @@ In the JavaScript/TypeScript ecosystem, [`fast-check`](https://github.com/dubzzz
 
 As far as that `nil pointer derefence`, it sure does smell an awful lot like Go. As of `1.18` [fuzzing is part of the standard tooling](https://go.dev/doc/fuzz/). I don't know what part of the Astro toolchain is written in Go, but it could probably benefit from some fuzzing.
 
-Even without any special tools or frameworks, there's big payoff to writing code that generates tests. I almost don't wanna call what I wrote for this exploration a "fuzzer" because it's deterministically testing a very specific part of the state space, but even so with relatively low effort this method found (at least) four distinct code paths that have unexpected behavior!
+Even without any special tools or frameworks, there's big payoff to writing code that generates tests. I almost don't wanna call what I wrote for this exploration a "fuzzer" because it's deterministically testing a very specific part of the state space, but even with relatively low effort this method found (at least) four distinct code paths that have unexpected behavior!
 
 Dan Luu has a great post about this: [Given that devs spend the effort they do on testing, what can we do to improve testing?](https://danluu.com/testing/)
 
