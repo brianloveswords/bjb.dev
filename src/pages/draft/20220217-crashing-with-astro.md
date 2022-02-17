@@ -74,7 +74,7 @@ I ran into a few other bugs that I didn't write about here that were not as inte
 
 [^docker]: If I keep Docker for Mac open, it does something weird to my _sound_. I don't know why Docker is messing with sound subsystems at all, but it causes my sound to cut in and out unless I `killall -9 coreaudio` every once in a while.
 
-[^vscode]: I'm doing the component/template development in VS Code. I've had to use `Developer: Reload Window` about 7 times in the last day because it will stop letting me type _numbers_. I can type other stuff, but for some reason it just refuses to put a number in the file if I press 0-9. This almost certainly has to do with the interplay of new VS Code version and some extension I'm using because it just doing this after a recent VS Code update.
+[^vscode]: I'm doing the component/template development in VS Code. I've had to use `Developer: Reload Window` about 7 times in the last day because it will stop letting me type _numbers_. I can type other stuff, but for some reason it just refuses to put a number in the file if I press 0-9. This almost certainly has to do with the interplay of new VS Code version and some extension I'm using because it just started doing this after a recent VS Code update.
 
 
 ## Appendix A: `fuzz.mjs`
