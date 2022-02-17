@@ -1,5 +1,5 @@
 ---
-import { getCanonicalURL } from "../util"
+import { getCanonicalURL, formatDate } from "../util"
 
 export interface Props {
 	title: string;
@@ -8,7 +8,7 @@ export interface Props {
 }
 
 let { title, publishDate, listening } = Astro.props;
-let canonicalURL = getCanonicalURL();
+let canonicalURL = getCanonicalURL(Astro);
 ---
 <style>
 .title {
@@ -26,10 +26,16 @@ let canonicalURL = getCanonicalURL();
 .published:hover, .published:focus {
     opacity: 1;
 }
+
+header {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
 </style>
 
 <header>
     <h1 class="title">{title}</h1>
-    <h2 class="published">posted <a href={canonicalURL}>{publishDate}</a></h2>
+    <h2 class="published">posted <a href={canonicalURL}>{formatDate(publishDate)}</a></h2>
     {listening && <h3 class="listening">{listening}</h3>}
 </header>

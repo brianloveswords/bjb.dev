@@ -1,0 +1,26 @@
+---
+import { formatDate } from '../util';
+
+export interface Post {
+	url: string;
+	description: string;
+	title: string;
+	publishDate: string;
+}
+
+export interface Props {
+	post: Post;
+}
+
+const { post } = Astro.props;
+const { url, publishDate, description } = post
+---
+<style>
+a {
+	font-family: monospace;
+	font-size: 1.1em;
+}
+</style>
+<li class="log-line">
+	<a href={url}>{formatDate(publishDate)}</a>: <em>{description}</em>
+</li>

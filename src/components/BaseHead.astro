@@ -6,7 +6,7 @@ export interface Props {
 	baseURL: string;
 }
 const { title, description, baseUrl } = Astro.props;
-let canonicalURL = getCanonicalURL();
+let canonicalURL = getCanonicalURL(Astro);
 ---
 
 <!-- Global Metadata -->
@@ -66,7 +66,8 @@ let canonicalURL = getCanonicalURL();
 	type="font/woff2"
 	crossorigin
 />
+<link rel="stylesheet" href={Astro.resolve('../styles/code.css')} />
+
 <style global>
 	@import "../styles/blog.css";
-	@import "../styles/code.css";
 </style>
