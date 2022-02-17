@@ -3,7 +3,6 @@ import { formatDate } from '../util';
 
 export interface Post {
 	url: string;
-	description: string;
 	title: string;
 	version: number;
 	publishDate: string;
@@ -15,7 +14,7 @@ export interface Props {
 }
 
 let { post } = Astro.props;
-let { url, publishDate, description } = post
+let { url, publishDate, title } = post
 
 url = (url.endsWith('/') ? url : url + '/') + '?v=' + post.version;
 ---
@@ -38,6 +37,6 @@ a {
 </style>
 <li class="log-line">
 	<span class="date">{formatDate(publishDate)}</span>
-	<a href={url}><em>{description}</em></a>
+	<a href={url}><em>{title}</em></a>
 	{post.sizeWarning && <span class="size-warning">{post.sizeWarning}</span>}
 </li>

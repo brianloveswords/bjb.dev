@@ -5,7 +5,7 @@ export interface Props {
 	description: string;
 	baseURL: string;
 }
-const { title, description, baseUrl } = Astro.props;
+const { title, description, baseURL } = Astro.props;
 let canonicalURL = getCanonicalURL(Astro);
 ---
 
@@ -25,14 +25,14 @@ let canonicalURL = getCanonicalURL(Astro);
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description ?? title} />
 <meta property="og:site_name" content="brianloveswords" />
-<meta property="og:image" content={`${baseUrl}/assets/brian-kittens.jpg`} />
+<meta property="og:image" content={`${baseURL}/assets/brian-kittens.jpg`} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description ?? title} />
-<meta property="twitter:image" content={`${baseUrl}/assets/brian-kittens.jpg`} />
+<meta property="twitter:image" content={`${baseURL}/assets/brian-kittens.jpg`} />
 <meta property="twitter:image:alt" content="brian reclining, covered in 4 black kittens. the kitten in the front is staring dead into the camera with their mouth wide open" />
 <meta property="twitter:site" content="@brianloveswords" />
 

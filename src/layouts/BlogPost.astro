@@ -3,20 +3,18 @@ import BaseHead from '../components/BaseHead.astro';
 import BlogPost from '../components/BlogPost.astro';
 import BlogFooter from '../components/BlogFooter.astro';
 import { baseURL } from "../meta"
-import { cleanDate } from "../util"
 
 let { content } = Astro.props;
-let { title, description, publishDate, listening, slug } = content;
+let { title, description, publishDate, listening } = content;
 ---
 
 <html lang={content.lang ?? 'en'}>
 	<head>
-		<BaseHead {title} {description ?? title} {baseURL} />
+		<BaseHead title={title} description={description} baseURL={baseURL} />
 	</head>
 
 	<body>
-
-		<BlogPost {title} {publishDate} {listening}>
+		<BlogPost title={title} publishDate={publishDate} description={description} listening={listening}>
 			<slot />
 		</BlogPost>
 		<BlogFooter />

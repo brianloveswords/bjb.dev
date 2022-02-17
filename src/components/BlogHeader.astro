@@ -4,10 +4,11 @@ import { getCanonicalURL, formatDate } from "../util"
 export interface Props {
 	title: string;
 	publishDate: string;
-	listening: string;
+	description?: string;
+	listening?: string;
 }
 
-let { title, publishDate, listening } = Astro.props;
+let { title, publishDate, description, listening } = Astro.props;
 let canonicalURL = getCanonicalURL(Astro);
 ---
 <style>
@@ -17,9 +18,22 @@ h1 {
     margin-top: 0.1em;
 }
 
+h1 aside {
+    font-size: 0.5em;
+    line-height: 0.75em;
+    opacity: 0.33;
+    font-style: italic;
+}
+
 h2 {
     margin: 0.2em 0;
     font-size: 1em;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
 }
 
 header {
@@ -45,7 +59,10 @@ a:hover, a:focus {
 </style>
 
 <header>
-    <h1 class="title">{title}</h1>
+    <h1 class="title">
+        {title}
+        {description && <aside>{description}</aside>}
+    </h1>
     <h2 class="published"><a href={canonicalURL}><i>🔗</i> posted {formatDate(publishDate)}</a></h2>
     <h2 class="back"><a href="/"><i>🔙</i> back to index</a></h2>
     {listening && <h3 class="listening">{listening}</h3>}

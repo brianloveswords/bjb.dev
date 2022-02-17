@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: crashing with Astro
+description: touch fuzzy get dizzy
 publishDate: 2022-02-17
 ---
 
