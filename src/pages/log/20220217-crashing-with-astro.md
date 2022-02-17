@@ -68,7 +68,7 @@ I started putting together a bug report and figured I should test against the la
 
 I ran the fuzzer against `0.23.0-next.9` and as it turns out this is fixed! Clean bill of health. Might be interesting to dig into the diff between `0.22.20` and `0.23.0-next.9` to figure out what changed that could have fixed this bug, but I'm supposed to be porting content right now so I need to stop this side quest before I get even more distracted.
 
-I ran into a few other bugs that I didn't write about here that were not as interesting, but even still this isn't close to the worst experience I've had trying out a piece of software and this post is not trying to slam the Astro devs. I am a Spiders Georg of software bugs, an outlier who should not be counted. Everything[^vscode] I touch[^obsidian] breaks[^docker] nearly immediately just by trying to use it "normally" (well, normal for me, I guess).
+I ran into a few other bugs that I didn't write about here that were not as interesting, but even still this isn't close to the worst experience I've had trying out a piece of software and this post is not trying to slam the Astro devs. I am a Spiders Georg of software bugs, an outlier who should not be counted. Everything[^vscode] I touch[^obsidian] breaks[^docker] nearly immediately just trying to use it normally (well, normal for me).
 
 [^obsidian]: I'm drafting this post in Obsidian and I've had to force-refresh it about 5 times because it keeps, I don't know how to describe it, eating the text I write? I type but the cursor doesn't move and when I click somewhere else the text goes away. I think this started when I added **Appendix C** but I'm not entirely sure.
 
