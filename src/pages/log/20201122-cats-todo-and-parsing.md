@@ -28,12 +28,14 @@ I skimmed an article (on my phone, while lying in bed and I cant find the link n
 There are two things my broken brain relates this to:
 
 - **OKRs**: instead of saying “I’m gonna get these things done”, set objectives.
-- **Budgeting**: [Give every dollar a job](https://www.youneedabudget.com/budgeting-tip-give-every-dollar-a-j-o-b/)<sup>[1]</sup> but instead of dollars, “give every block of time” a job.
+- **Budgeting**: [Give every dollar a job](https://www.youneedabudget.com/budgeting-tip-give-every-dollar-a-j-o-b/)[^1] but instead of dollars, “give every block of time” a job.
 
-1: At this point I’m giving [Actual Budget](https://actualbudget.com/) a shot as my budgeting software, but I have YNAB to thank for teaching me how to budget in a way that works. I can’t recommend their methodology enough.
+[^1]: At this point I’m giving [Actual Budget](https://actualbudget.com/) a shot as my budgeting software, but I have YNAB to thank for teaching me how to budget in a way that works. I can’t recommend their methodology enough.
 
 
 ## <a name="parsers">Get source code colorization working</a>
+_update 2022-02-17: this isn't how stuff works anymore, but I'm leaving it here for sake of historical accuracy_
+
 - working on site generator, I’m gonna eventually wanna include some code in my logs/posts
 - use [pygments](https://pygments.org/)?
 - let’s color this block of code

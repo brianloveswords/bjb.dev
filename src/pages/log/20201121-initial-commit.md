@@ -2,7 +2,7 @@
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
 title: initial commit
-publishDate: 2020-11-21 00:03:01
+publishDate: 2020-11-21
 ---
 
 - **Set this spot up**
