@@ -49,7 +49,7 @@ It's possible there's something going on in 16 byte chunks. Looking at the last 
 
 I love testing because it lets me pretend my software will work out there in the dangerous and hostile world of _actual user input_.
 
-I love _generating test cases_ even more because I want to run a lot of tests but coming up with them by hand is hella boring and also suffers from my own bias of knowing how the dang thing works—I'm more likely to test stuff I _think_ would fail, which tends to only be loosely correlated (at best) with how things _actually fail in the wild_.
+I love _generating test cases_ even more because I want to run a lot of tests but coming up with them by hand is hella boring and also suffers from my own bias of knowing how the dang thing works—I'm more likely to test stuff I _think_ would fail, which tends to be loosely correlated at best with how things _actually fail in the wild_.
 
 If I were developing Astro (and maybe I'll try to contribute if I decide to stick with it for the long haul) I would toss some [property tests](https://increment.com/testing/in-praise-of-property-based-testing/) into the mix. The types of failures found in this post are exactly the kinda stuff I've caught with property-based testing, and the "shrinking" that most frameworks provide would have likely been able to identify (or at least lead towards) a minimal repro case.
 
