@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: "software tryouts: alfred and mpd"
+title: "tryouts: alfred and mpd"
 publishDate: 2020-12-28
 ---
 ## Trying out Alfred

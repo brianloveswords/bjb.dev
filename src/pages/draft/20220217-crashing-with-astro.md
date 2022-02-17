@@ -62,16 +62,19 @@ Even without any special tools or frameworks, there's big payoff to writing code
 Dan Luu has a great post about this: [Given that devs spend the effort they do on testing, what can we do to improve testing?](https://danluu.com/testing/)
 
 
-
-
 ## this is already fixed in the next version
+
 I started putting together a bug report and figured I should test against the latest prerelease, make sure it hasn't been fixed before I put a lot of effort into explaining the problem and cleaning up the reproduction cases.
 
 I ran the fuzzer against `0.23.0-next.9` and as it turns out this is fixed! Clean bill of health. Might be interesting to dig into the diff between `0.22.20` and `0.23.0-next.9` to figure out what changed that could have fixed this bug, but I'm supposed to be porting content right now so I need to stop this side quest before I get even more distracted.
 
-I ran into a few other bugs that I didn't write about here that were not as interesting, but even still this isn't close to the worst experience I've had trying out a piece of software and this post is not trying to slam the Astro devs. I am a Spiders Georg of software bugs, an outlier who should not be counted[^obsidian]. Everything I touch breaks nearly immediately just by trying to use it "normally" (well, normal for me, I guess).
+I ran into a few other bugs that I didn't write about here that were not as interesting, but even still this isn't close to the worst experience I've had trying out a piece of software and this post is not trying to slam the Astro devs. I am a Spiders Georg of software bugs, an outlier who should not be counted. Everything[^vscode] I touch[^obsidian] breaks[^docker] nearly immediately just by trying to use it "normally" (well, normal for me, I guess).
 
-[^obsidian]: As an example, I'm drafting this post in obsidian and I've already had to force-refresh it about 5 times because it keeps, I don't know how to describe it, eating the text I write? I type but the cursor doesn't move and when I click somewhere else the text goes away. I think this started when I added **Appendix C** but I'm not entirely sure.
+[^obsidian]: I'm drafting this post in Obsidian and I've had to force-refresh it about 5 times because it keeps, I don't know how to describe it, eating the text I write? I type but the cursor doesn't move and when I click somewhere else the text goes away. I think this started when I added **Appendix C** but I'm not entirely sure.
+
+[^docker]: If I keep Docker for Mac open, it does something weird to my _sound_. I don't know why Docker is messing with sound subsystems at all, but it causes my sound to cut in and out unless I `killall -9 coreaudio` every once in a while.
+
+[^vscode]: I'm doing the component/template development in VS Code. I've had to use `Developer: Reload Window` about 7 times in the last day because it will stop letting me type _numbers_. I can type other stuff, but for some reason it just refuses to put a number in the file if I press 0-9. This almost certainly has to do with the interplay of new VS Code version and some extension I'm using because it just doing this after a recent VS Code update.
 
 
 ## Appendix A: `fuzz.mjs`
