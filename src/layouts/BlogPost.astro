@@ -8,7 +8,7 @@ const { content } = Astro.props;
 const { title, description, publishDate, author, heroImage, permalink, alt } = content;
 ---
 
-<html lang={content.lang || 'en'}>
+<html lang={content.lang ?? 'en'}>
 	<head>
 		<BaseHead {title} {description} {permalink} />
 	</head>

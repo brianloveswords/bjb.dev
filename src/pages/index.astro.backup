@@ -1,0 +1,62 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+// import BlogHeader from '../components/BlogHeader.astro';
+// import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+interface MarkdownFrontmatter {
+	publishDate: number;
+}
+
+let title = 'brianloveswords';
+let description = 'thoughts and feelings';
+let permalink = 'https://bjb.dev';
+
+// Data Fetching: List all Markdown posts in the repo.
+
+// let allPosts = await Astro.fetchContent('./posts/*.md');
+// allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<BaseHead {title} {description} {permalink} />
+	</head>
+	<body>
+		<h1>brianloveswords</h1>
+		<h2>logs</h2>
+		<ul>
+			<li><a href="/_/2022-02-16.html">2022-02-16</a>: <em>what I want in a static site generator</em></li>
+			<li><a href="/_/2020-12-28.html">2020-12-28</a>: <em>trying out alfred; experimenting with mpd</em></li>
+			<li><a href="/_/2020-12-27.html">2020-12-27</a>: <em>automating default browser switching; ugly images redux</em></li>
+			<li><a href="/_/2020-12-04.html">2020-12-04</a>: <em>bandcamp friday picks</em></li>
+			<li><a href="/_/2020-11-30.html">2020-11-30</a>: <em>what I’m watching, what I’m reading (no computer stuff)</em></li>
+			<li><a href="/_/2020-11-25.html">2020-11-25</a>: <em>thinking bout linting</em></li>
+			<li><a href="/_/2020-11-24.html">2020-11-24</a>: <em>fonts and legibility, local dev file serving, unison</em></li>
+			<li><a href="/_/2020-11-23.html">2020-11-23</a>: <em>keeping images one notch above ugly; placeholders in type driven design</em></li>
+			<li><a href="/_/2020-11-22.html">2020-11-22</a>: <em>cats for adoption; code highlighting</em></li>
+			<li><a href="/_/2020-11-21.html">2020-11-21</a>: <em>initial commit</em></li>
+		</ul>
+		<h2>other websites I like</h2>
+		<ul>
+			<li><a href="https://copyconstruct.medium.com/">copyconstruct.medium.com</a></li>
+			<li><a href="https://danluu.com/">danluu.com</a></li>
+			<li><a href="https://fasterthanli.me/">fasterthanli.me</a></li>
+			<li><a href="https://www.hillelwayne.com/">hillelwayne.com</a></li>
+			<li><a href="https://jvns.ca/">jvns.ca</a></li>
+			<li><a href="https://lexi-lambda.github.io/">lexi-lambda.github.io</a></li>
+			<li><a href="https://programmingisterrible.com/">programmingisterrible.com</a></li>
+			<li><a href="https://vicki.substack.com/people/919000-vicki-boykis">vicki.substack.com</a></li>
+		</ul>
+		<h2>places I'm online</h2>
+		<ul>
+			<li><a href="https://bandcamp.com/brianloveswords">bandcamp.com/brianloveswords</a></li>
+			<li><a href="https://twitter.com/brianloveswords">twitter.com/brianloveswords</a></li>
+			<li><a href="https://github.com/brianloveswords">github.com/brianloveswords</a></li>
+			<li>You can also email me if that's what you're into, its brianloveswords &lt;at&gt; gmail com because I simply cannot be trusted to run my own domain forever.</li>
+		</ul>
+	</body>
+</html>
