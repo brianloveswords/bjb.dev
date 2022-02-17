@@ -43,7 +43,7 @@ This intuition proved correct, the crash had nothing to do with the semantics of
 [^wasm]: I also manually found a 4th way of getting the compiler to blow up that is _mostly_ based on file size, but it does require having some of the bytes be in a frontmatter section. That one triggers an entirely different error path having to do with WASM, `null function or function signature mismatch`.
 
 
-There are three distinct types[^wasm] of 💣💥 that occur in four different ranges. The first three ranges are all 16 bytes wide, and the last range is 80 bytes wide, which are round powers of 2 that makes my computer brain feel nice, but I am not sure why the errors appear at those specific offsets.
+There are three distinct types[^wasm] of 💣💥 that occur in four different ranges. The first three ranges are all 16 bytes wide, and the last range is 80 bytes wide, which are numbers that makes my computer brain feel nice, but I am not sure why the errors appear at those specific offsets.
 
 It's possible there's something going on in 16 byte chunks. Looking at the last good byte before the offsets, `[2912, 2928, 2976, 3024]`, those are all divisible by 16, so the next byte which is the one that starts causing the failure would be the start of a new chunk. This could absolutely be a coincidence, though.
 
