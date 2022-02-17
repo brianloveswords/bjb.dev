@@ -29,12 +29,12 @@ Then I had a thought: what if there is no relationship to _my specific content_?
 
 This intuition proved correct: the crash had nothing to do with the semantics of the file _at all_, the code path that triggered it was completely determined by the number of bytes in the file. So I wrote a lil fuzzer (see **Appendix A**) to write an increasing number of bytes to  `src/pages/index.astro` and keep track of where it started failing. I let it run for a few hours and the results were fascinating:
 
-- `0000-2912` bytes: 🆗.
+- `0000-2912` bytes: 🆗
 - `2913-2928` bytes: `RuntimeError: Error: Uh oh, the Astro compiler encountered an unrecoverable error!`
 - `2929-2944` bytes: `TypeError: Cannot read properties of undefined (reading 'code')`
 - `2945-2976` bytes: 👍🏽
 - `2977-2992` bytes: `panic: runtime error: nil pointer dereference`
-- `2993-3024` bytes: ⛵️.
+- `2993-3024` bytes: ⛵️
 - `3025-3104` bytes: `panic: runtime error: nil pointer dereference`
 - `>= 3105` bytes: 😎
 
