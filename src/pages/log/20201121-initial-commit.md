@@ -1,18 +1,16 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-title: "2020-11-21"
+title: "initial commit"
 publishDate: "2020-11-21"
 description: initial commit
-----------
-
-# 2020-11-21
+---
 
 - **Set this spot up**
   - _Infrastructure_
     - Google Domains
     - Google Cloud Storage
-    - CloudFlare
+    - Cloudflare
   - _Deployment_
     - Makefile
     - trash static site generator I wrote in Scala to practice Scala.
