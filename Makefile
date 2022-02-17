@@ -23,7 +23,7 @@ auth :
 	@gcloud auth activate-service-account --key-file ${GOOGLE_APPLICATION_CREDENTIALS} --project ${PROJECT}
 
 push : NODE_ENV=production
-push : build auth cache-purge
+push : build auth
 	@gsutil -m rsync -d -r ${BUILD_DIR} gs://${SITE}
 
 push-dry-run : auth build
@@ -34,6 +34,8 @@ cache-purge :
      -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
 	 -H "Content-Type: application/json" \
      --data '{"purge_everything":true}'
+
+publish : push cache-purge
 
 clean :
 	@rm -rf dist

@@ -5,6 +5,7 @@ export interface Post {
 	url: string;
 	description: string;
 	title: string;
+	version: number;
 	publishDate: string;
 	sizeWarning?: string;
 }
@@ -13,8 +14,10 @@ export interface Props {
 	post: Post;
 }
 
-const { post } = Astro.props;
-const { url, publishDate, description } = post
+let { post } = Astro.props;
+let { url, publishDate, description } = post
+
+url = (url.endsWith('/') ? url : url + '/') + '?v=' + post.version;
 ---
 <style>
 .date {

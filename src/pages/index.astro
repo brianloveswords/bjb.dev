@@ -6,6 +6,7 @@ let posts = Astro.fetchContent("./log/*.md")
 	.sort((a,b) => b.publishDate > a.publishDate ? 1 : -1)
 	.map(post => {
 		post.description = post.description ?? post.title;
+		post.version = post.version ?? 1;
 		return post;
 	});
 
