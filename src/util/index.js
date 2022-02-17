@@ -28,12 +28,12 @@ export function formatDate(date) {
         let d = zeroPad(date.getUTCDate());
         let datePart = `${y}-${m}-${d}`;
 
-        let h = zeroPad(date.getUTCHours());
-        let min = zeroPad(date.getUTCMinutes());
-        let s = zeroPad(date.getUTCSeconds());
-        let timePart = `${h}:${min}:${s}`;
+        // let h = zeroPad(date.getUTCHours());
+        // let min = zeroPad(date.getUTCMinutes());
+        // let s = zeroPad(date.getUTCSeconds());
+        // let timePart = `${h}:${min}:${s}`;
 
-        return `${datePart} ${timePart}`;
+        return `${datePart}`;
     }
 }
 

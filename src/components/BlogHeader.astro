@@ -16,15 +16,9 @@ let canonicalURL = getCanonicalURL(Astro);
     margin-bottom: 0.2em;
 }
 
-.published {
+h2 {
     margin: 0.2em 0;
     font-size: 1em;
-    opacity: 0.66;
-    transition: opacity 0.2s ease-in-out;
-}
-
-.published:hover, .published:focus {
-    opacity: 1;
 }
 
 header {
@@ -32,10 +26,26 @@ header {
     margin-bottom: 1em;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+
+a {
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0.66;
+}
+a i {
+    display: inline-block;
+    font-style: normal;
+    width: 1.2em;
+}
+a:hover, a:focus {
+    opacity: 1;
+}
+
 </style>
 
 <header>
     <h1 class="title">{title}</h1>
-    <h2 class="published">posted <a href={canonicalURL}>{formatDate(publishDate)}</a></h2>
+    <h2 class="published"><a href={canonicalURL}><i>🔗</i> posted {formatDate(publishDate)}</a></h2>
+    <h2 class="back"><a href="/"><i>🔙</i> back to index</a></h2>
     {listening && <h3 class="listening">{listening}</h3>}
 </header>

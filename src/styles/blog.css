@@ -33,8 +33,16 @@ p {
 
 p > code,
 a > code {
-    font-size: 120%;
+    font-size: 110%;
 }
+
+p > code {
+    background: #272822;
+    color: #f8f8f2;
+    padding: .1em .3em;
+    border-radius: .3em;
+}
+
 
 img {
     max-width: 100%;

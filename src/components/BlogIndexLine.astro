@@ -16,11 +16,15 @@ const { post } = Astro.props;
 const { url, publishDate, description } = post
 ---
 <style>
-a {
+.date {
 	font-family: monospace;
-	font-size: 1.1em;
+}
+
+a {
+	padding-left: 0.5em;
 }
 </style>
 <li class="log-line">
-	<a href={url}>{formatDate(publishDate)}</a>: <em>{description}</em>
+	<span class="date">{formatDate(publishDate)}</span>
+	<a href={url}><em>{description}</em></a>
 </li>
