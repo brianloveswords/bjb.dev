@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: crashing with Astro
 description: touch fuzzy get dizzy
 publishDate: 2022-02-17
-version: 3
+version: 4
 ---
 
 _Currently listening to: [MØL – Diorama](https://moeldk.bandcamp.com/album/diorama)_
