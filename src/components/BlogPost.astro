@@ -3,9 +3,18 @@ export interface Props {
 	title: string;
 	publishDate: string;
 	listening: string;
+	permalink: string;
 }
 
-const { title, publishDate, listening } = Astro.props;
+let { title, publishDate, listening, permalink } = Astro.props;
+
+if (publishDate?.constructor === Date) {
+	publishDate = publishDate.toISOString().slice(0, 10)
+}
+else if (publishDate.length > 10) {
+	publishDate = publishDate.slice(0, 10)
+}
+
 ---
 
 <div class="layout">
@@ -13,7 +22,7 @@ const { title, publishDate, listening } = Astro.props;
 		<main>
 			<header>
 				<h1>{title}</h1>
-				<h2>{publishDate}</h2>
+				<h2><a href={permalink}>{publishDate}</a></h2>
 				{listening && <h3>{listening}</h3>}
 			</header>
 

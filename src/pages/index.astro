@@ -1,13 +1,11 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-let title = 'brianloveswords';
-let description = 'thoughts and feelings';
-let permalink = 'https://bjb.dev';
+import { title, description, baseUrl } from "../meta"
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} permalink={permalink} />
+		<BaseHead title={title} description={description} baseUrl={baseUrl} permalink={baseUrl} />
 	</head>
 	<body>
 		<h1>brianloveswords</h1>
