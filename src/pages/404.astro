@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogIndexLine from '../components/BlogIndexLine.astro';
+import { title, description, baseURL } from "../meta"
+let posts = Astro.fetchContent("./log/*.md")
+	.sort((a,b) => b.publishDate > a.publishDate ? 1 : -1)
+	.map(post => {
+		post.description = post.description ?? post.title;
+		post.version = post.version ?? 1;
+		return post;
+	})
+    .slice(0,5);
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} baseURL={baseURL} />
+    </head>
+    <body>
+        <h1><a href="/">brianloveswords</a>: 404</h1>
+        <p>
+            there's nothing here. If you're sure something is supposed to be here, please email me and let me know!
+        </p>
+        <h2>here are the last 5 posts in case that's helpful</h2>
+        <ul>
+            { posts.map(post => <BlogIndexLine post={post}/>) }
+        </ul>
+        <h3>or you can go back to <a href="/">the index</a></h3>
+    </body>
+</html>
