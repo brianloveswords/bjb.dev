@@ -64,7 +64,7 @@ I start taking notes once something starts turning my gears. Reading [How To Tak
 
 My brain's cache for working through interesting things is small. Not everything I read passes the interest filter, but once something is in there I need to flush the cache in order to start processing new interesting information. I flush the cache by writing what's in my head.
 
-I started recognizing a tell for when I need to flush the cache: when I have to go back and re-read a sentence or paragraph or page because I was "zoning out".
+I recently recognized a tell for when I need to flush the cache: when I have to go back and re-read a sentence or paragraph or page because I was "zoning out".
 
 I used to hate this—c'mon brain, stick with it—but now recognize this means I have some interesting stuff in my brain that I need to start working out on paper.
 
