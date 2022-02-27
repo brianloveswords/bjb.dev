@@ -72,7 +72,7 @@ I used to hate this—c'mon brain, stick with it—but now recognize this means 
 
 Zoning out is my brain making connections to other things, and when I start writing I can always follow the thread back from what I was starting to daydream about to the paper I'm reading.
 
-Sometimes I take that opportunity to get back into the paper, but frequently I explore in the other direction and find I'm zoning toward an idea I want to explore further, maybe one that connects to other references I'm working through (books, papers, blog posts, etc) or other half-baked ideas I started working out previously but didn't finish.
+Sometimes I take that opportunity to get back into the paper, but frequently I follow the other direction and find I'm zoning toward an idea I want to explore further, maybe one that connects to other references I'm working through (books, papers, blog posts, etc) or other half-baked ideas I started working out previously but didn't finish.
 
 What I do depends on where my interest is leading me, and if it leads me away from the paper I'll put it away until something leads me back.
 
