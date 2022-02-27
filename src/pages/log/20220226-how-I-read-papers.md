@@ -78,6 +78,6 @@ What I do depends on where my interest is leading me, and if it leads me away fr
 
 ## what have I learned?
 
-I don't try to process papers by trying to frack every last bit of information from the text. I can't force myself to be interested in things.
+I don't process papers by trying to frack every last bit of information from the text. I can't force myself to be interested in things.
 
 Most papers I've started I still haven't finished—my interest hasn't lead me back there yet, and that's fine with me.
