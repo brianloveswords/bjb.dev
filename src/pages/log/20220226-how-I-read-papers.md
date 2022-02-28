@@ -12,7 +12,7 @@ This is my personal strategy guide for getting the most out of reading research 
 
 I read papers to explore ideas, not because it is required of me. There is no external expectation on me to produce work or novel research based on what I read.
 
-If your circumstance require you to read _specific papers_ that are making you miserable, I cannot help you.
+If your circumstances require you to read _specific papers_ that are making you miserable, I cannot help you.
 
 
 ## finding papers
