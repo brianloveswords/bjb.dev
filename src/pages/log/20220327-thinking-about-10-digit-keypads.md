@@ -1,45 +1,58 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: thinking about 10-digit keypads
-description: thought crimes with imaginary safes
+description: committing math crimes against imaginary safes
 publishDate: 2022-03-27
-version: 1
+version: 3
 ---
 
-Let's say we're thieves and we're breaking into a safe that has a standard 10-digit keypad and you know it requires a 4-digit code.
+Let's say we're thieves and we're breaking into a safe. It uses a standard 10-digit keypad and requires a 4-digit code.
 
-We have have some technology that allows us to see the buttons that have been pressed, like a fingerprinting kit[^1]. If the code is `[4 2 2 0]`, we'll be able to recover the unordered set `#{0 4 2}`
+We have some way of knowing which buttons are most frequently pressed, like a fingerprinting kit or [observable wear and tear](https://twitter.com/MalwareJake/status/1507726475939790852). As an example, if the code is `[4 2 2 0]`, we'll recover the unordered set `#{0 4 2}`. We'll know which buttons were pressed, but not in what order.
 
-Let's assume we get perfect fidelity into which buttons were pressed—all found digits appear in the code, and the code is made exclusively of found digits. What's the worst case scenario?
+Let's also assume perfect fidelity: all found digits appear in the code, and the code is made exclusively of found digits.
 
-## i'm writing this to practice math
+What codes are better or worse for thwarting our thievery?
 
-I could probably figure out the right set of terms to look up an answer to this, but I want to practice reasoning it out as far as possible with math (and experimentally with programming when I can't figure it out with math).
+## everybody loves word problems, right?
 
+My approach might not the easiest way to think about this, and it might not even be right! I'm trying to get better at turning problems into math. Computers tend to be pretty good at math, so it feels useful to be able to decompose scenarios into a bunch of math.
+
+There's gonna be a point where I can't math it out anymore, and I'll resort to solving stuff experimentally with programming.
 
 ## before dusting for prints
 
-On a 10-digit keypad with a 4-digit code, everything between 0000-9999 is valid.
+On a 10-digit keypad with a 4-digit code, before we get any information to tell us otherwise, every code between 0000-9999 is a possibility. We can use this equation to calculate the size of the keyspace:
 
 <p>
 <em>base<sup>length</sup></em> = 10<sup>4</sup> = 10,000 possibilities
 </p>
 
-If we know the `7` button is broken and can't be used in any codes, the remaining valid digit set is `#{1 2 3 4 5 6 8 9 0}`, so there would be 9<sup>4</sup> = 6,561 possible codes.
+If we know the `7` button is broken and can't be used in any codes, the remaining valid digit set would be:
 
-## 1 digit
+```
+#{1 2 3 4 5 6 8 9 0}
+```
 
-1<sup>4</sup> = 1 code
+so there would be 9<sup>4</sup> = 6,561 possible codes.
+
+If we dust those digits and find a set of size `n`, we can calculate the _maximum_ size of the keyspace with <em>n<sup>4</sup></em>.
+
+We'll generally get to remove some entries from the initial keyspace since all valid codes must include all digits from the found set. The exception is if we find only 1 digit, since the keyspace is exactly 1 code in that case.
+
+## One digit found
+
+1<sup>4</sup> = 1 possible code
 
 If we dust and only the `9` digit was pressed, we can reduce the valid digit set for the code to `#{9}`. We know the length of the code is always four, so the only valid code is `[9 9 9 9]`.
 
-This is the best case scenario.
+Please don't secure your valuables with a 1-digit code.
 
-## 2 digits
+## Two digits found
 
 2<sup>4</sup> = 16 possibilities *at most.*
 
-Let's say `7` and `4` come up. The base possibilities are:
+Let's say `7` and `4` come up. The base set of possibilities are:
 
 ```
 4444*
@@ -60,27 +73,43 @@ Let's say `7` and `4` come up. The base possibilities are:
 7777*
 ```
 
-...but two of these don't make sense: since we found `7` and `4`, both must be observed in the code. This means we can rule out `4444` and `7777`, leaving 14 possibilities.
+Since we found `7` and `4` when we dusted, we know that both of those digits must be observed in the code. This allows us to rule out `4444` and `7777`, which leaves 14 possibilities.
 
-Thinking about it in binary might be useful: the only two states where all bits are the same are when all bits are set (`1111`) or all bits are clear (`0000`). Everything else has a combination of 1 and 0 bits so those would be valid.
+Thinking about it in binary terms is helpful to me: the only two states that have a homogenous bitstring are at the maximum (`1111`) and minimum (`0000`). Everything else has a combination of 1 and 0 bits.
 
-## Three different digits
+## Three digits found
 
 3<sup>4</sup> = 81 possibilities *at most.*
 
-Like before, we can omit some of the codes. I can't think of a good way to express the rule in math and I can't think in trinary so I can't take a mental shortcut. Gonna have to count it out.
+Like before we can omit some of the codes, but I can't think of a good way to express the rule in math and I can't think in trinary so I can't take a mental shortcut. Gonna have to count it out.
 
-_...counting it out[^2]..._
+Using `#{0 1 2}` as the found set, and Clojure because I happen to be reading a Clojure book and I have a REPL open:
 
-Alright so 45 can be ruled out, leaving 36 of them valid.
+```clojure
+(count
+  (filter
+    #(= (count (into #{} %)) 3) ;; require 3 distinct digits
+    #{"0000" "0001" "0002" "0010" "0011" "0012" "0020" "0021" "0022"
+      "0100" "0101" "0102" "0110" "0111" "0112" "0120" "0121" "0122"
+      "0200" "0201" "0202" "0210" "0211" "0212" "0220" "0221" "0222"
+      "1000" "1001" "1002" "1010" "1011" "1012" "1020" "1021" "1022"
+      "1100" "1101" "1102" "1110" "1111" "1112" "1120" "1121" "1122"
+      "1200" "1201" "1202" "1210" "1211" "1212" "1220" "1221" "1222"
+      "2000" "2001" "2002" "2010" "2011" "2012" "2020" "2021" "2022"
+      "2100" "2101" "2102" "2110" "2111" "2112" "2120" "2121" "2122"
+      "2200" "2201" "2202" "2210" "2211" "2212" "2220" "2221" "2222"}))
+;; => 36
+```
 
-## Four different digits
+Alright so 36 are valid because they contain all 3 found digits, and 45 of them can be ruled out.
+
+## Four digits found
 
 4<sup>4</sup> = 256 possibilities *at most.*
 
 We can use a trick for this one so we don't have to count it out: it's the set of permutations for the found digit set, so `4! = 24` possibilities.
 
-The intuition is this: each member of the found digit set *must* be used, and since the size of the code and the found digit set match, each digit must be used exactly once. This means each button press in the code "consumes" that choice, and the next button press has one fewer option to choose from.
+My intuition is this: each member of the found digit set *must* be used, and since the size of the code and the found digit set match, each digit must be used exactly once. This means each button press in the code "consumes" that choice, and the next button press has one fewer option to choose from.
 
 Say we find `#{9 4 1 8}`. An example of a valid code:
 
@@ -95,15 +124,27 @@ We can choose the the digits in a different order, but we always have one fewer 
 
 4 choices ⨉ 3 choices ⨉ 2 choices ⨉ 1 choice = 24 choices
 
-This is a better case for us as thieves than finding just 3 digits.
+As thieves, this is a better case for us than finding 3 digits!
 
-## Longer codes!
+- best case: 1 digit (1 code)
+- good case: 2 digits (14 codes)
+- worst case: 3 digits (36 codes)
+- alright case: 4 digits (24 codes)
 
-The worst case is not the one that uses the largest digit set for code because we're trading information: add one more bit to the keyspace, but invalidates part of the keyspace since it adds another restriction in that the combination must include the additional digit.
+## Longer codes
 
-I'm interested in how this pans out for longer codes but I don't know how to express this mathematically, so I wrote some inefficient throwaway code[^3] to calculate it.
+The worst case is not the one that uses the largest digit set for code because there's a tradeoff: another digit adds one more bit to the keyspace, but also invalidates more of the keyspace since it adds another restriction (valid combinations must include all digits).
+
+I'm interested in how this pans out for longer codes but I don't know how to express this mathematically, so I wrote some inefficient throwaway code to calculate it.[^code]
+
+<details>
+
+  <summary>Expand this dropdown to see the setup code</summary>
 
 ```clojure
+;; nothing about this code is production ready.
+;; don't use it for anything important!
+
 (defn gen-possibilities-4 [size]
   (let [alpha (range size)]
     (for [x1 alpha x2 alpha x3 alpha x4 alpha]
@@ -130,9 +171,11 @@ I'm interested in how this pans out for longer codes but I don't know how to exp
 
 
 (defn size-is [n]
-  #(>= (count %) n))
+  #(= (count %) n))
 
 (def into-set #(into #{} %))
+
+(def up-to #(range 1 (+ % 1)))
 
 (defn dust-for-prints-4 [n]
   (let [possible (map into-set (gen-possibilities-4 n))]
@@ -149,28 +192,45 @@ I'm interested in how this pans out for longer codes but I don't know how to exp
 (defn dust-for-prints-8 [n]
   (let [possible (map into-set (gen-possibilities-8 n))]
     (count (filter (size-is n) possible))))
+```
+</details>
 
 
-(map #(dust-for-prints-4 %) (range 1 5))
+```clojure
+(map #(dust-for-prints-4 %) (up-to 4))
 ;; => (1 14 36 24)
-(map #(dust-for-prints-5 %) (range 1 6))
+(map #(dust-for-prints-5 %) (up-to 5))
 ;; => (1 30 150 240 120)
-(map #(dust-for-prints-6 %) (range 1 7))
+(map #(dust-for-prints-6 %) (up-to 6))
 ;; => (1 62 540 1560 1800 720)
-(map #(dust-for-prints-7 %) (range 1 8))
+(map #(dust-for-prints-7 %) (up-to 7))
 ;; => (1 126 1806 8400 16800 15120 5040)
-(map #(dust-for-prints-8 %) (range 1 9))
+(map #(dust-for-prints-8 %) (up-to 8))
 ;; => (1 254 5796 40824 126000 191520 141120 40320)
 ```
 
-## what is the relationship?
+Up through 6-digit codes, the worse case scenario is at  `n-1` digits, between 7 and 8 it's at `n-2`.
 
-I have no idea but it's interesting! Up through 6-digit codes, the worse case scenario is at  `n-1` digits, between 7 and 8 it's at `n-2`.  They seem to follow roughly similar curves. I'd like to check 9+ but I only wanted to spend a few hours on this and I'm out of time, also my code is too inefficient to go higher and I don't want to rewrite it right now!
+The results seem to follow roughly similar curves. I'm interested in 9+ digits but my code is too inefficient: calculating results for 7 digit codes takes a few seconds, and 8 digit codes take about a minute. I *might* be able to get 9 digit codes in under an hour, but I timeboxed this experiment and I'm running out of time so I'm not going to try to rewrite it, I'll leave that as an exercise for future-me.
 
-When I learn more math I might come back to this and try to figure out if I can describe this with an equation.
+## can we describe the relationship with a single equation?
 
-[^1]: Or visible wear and tear on the keys themselves. I scrolled past a tweet depiciting exactly that, with 4 keys clearly worn, which is what made me start thinking about this.
+Wish I could! Feels like we should be able to, but I don't know enough math technique to figure out how.
 
-[^2]: using `#{0 1 2}` as the found set, `["0000" "0001" "0002" "0010" "0011" "0012" "0020" "0021" "0022" "0100" "0101" "0102" "0110" "0111" "0112" "0120" "0121" "0122" "0200" "0201" "0202" "0210" "0211" "0212" "0220" "0221" "0222" "1000" "1001" "1002" "1010" "1011" "1012" "1020" "1021" "1022" "1100" "1101" "1102" "1110" "1111" "1112" "1120" "1121" "1122" "1200" "1201" "1202" "1210" "1211" "1212" "1220" "1221" "1222" "2000" "2001" "2002" "2010" "2011" "2012" "2020" "2021" "2022" "2100" "2101" "2102" "2110" "2111" "2112" "2120" "2121" "2122" "2200" "2201" "2202" "2210" "2211" "2212" "2220" "2221" "2222"]`
+```haskell
+f :: Int -> Int -> Int
+-- some known examples
+f 2 4 = 14
+f 4 4 = 24
+f 4 5 = 240
+f 4 6 = 1560
 
-[^3]: I happen to be reading a Clojure book so I figured I'd try it out in Clojure. I could probably reduce the copy and pasting with a macro, and in fact I tried for about 10 minutes but couldn't figure it out.
+-- generalizing
+f 1 y = 1
+f 2 y = y^2 - 2
+f x y
+  | x == y    = x!
+  | otherwise = undefined -- ???
+```
+
+[^code]: I could reduce the copy and pasting with a macro, and in fact I tried for about 10 minutes I gave up because this is a post about math(s) not macro(s).
