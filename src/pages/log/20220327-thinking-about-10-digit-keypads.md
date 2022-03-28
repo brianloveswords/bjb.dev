@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: thinking about 10-digit keypads
 description: committing math crimes against imaginary safes
 publishDate: 2022-03-27
-version: 3
+version: 4
 ---
 
 Let's say we're thieves and we're breaking into a safe. It uses a standard 10-digit keypad and requires a 4-digit code.
@@ -218,7 +218,9 @@ The results seem to follow roughly similar curves. I'm interested in 9+ digits b
 Wish I could! Feels like we should be able to, but I don't know enough math technique to figure out how.
 
 ```haskell
+-- haskell enters the chat
 f :: Int -> Int -> Int
+
 -- some known examples
 f 2 4 = 14
 f 4 4 = 24
@@ -227,10 +229,10 @@ f 4 6 = 1560
 
 -- generalizing
 f 1 y = 1
-f 2 y = y^2 - 2
+f 2 y = 2^y - 2
 f x y
-  | x == y    = x!
-  | otherwise = undefined -- ???
+  | x == y    = product [1..x] -- factorial
+  | otherwise = undefined      -- ???
 ```
 
 [^code]: I could reduce the copy and pasting with a macro, and in fact I tried for about 10 minutes I gave up because this is a post about math(s) not macro(s).
