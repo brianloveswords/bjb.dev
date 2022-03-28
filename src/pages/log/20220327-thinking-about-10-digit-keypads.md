@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: thinking about 10-digit keypads
-description: committing math crimes against imaginary safes
+description: committing math crimes with imaginary safes
 publishDate: 2022-03-27
 version: 4
 ---
