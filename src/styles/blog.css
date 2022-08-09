@@ -74,6 +74,12 @@ li {
     line-height: 125%;
 }
 
+.error {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+}
+
 @font-face {
     font-family: "Atkinson Hyperlegible";
     src: url("/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
