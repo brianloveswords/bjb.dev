@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: "fp in scala: typesafe charges"
+description: probably not a good idea, but let's give it a shot
 publishDate: 2022-08-09
 version: 1
 ---
