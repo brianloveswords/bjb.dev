@@ -3,7 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import BlogIndexLine from '../components/BlogIndexLine.astro';
 import { title, description, baseURL } from "../meta"
 let posts = Astro.fetchContent("./log/*.md")
-	.sort((a,b) => b.publishDate > a.publishDate ? 1 : -1)
+	.filter(a => a?.publishDate?.toLowerCase() != 'draft')
+    .sort((a,b) => b.publishDate > a.publishDate ? 1 : -1)
 	.map(post => {
 		post.description = post.description ?? post.title;
 		post.version = post.version ?? 1;

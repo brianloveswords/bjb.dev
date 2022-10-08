@@ -42,7 +42,7 @@ Browsers (and CSS) have improved a lot so zoom levels work a lot better than the
 
 Related to legibility: [Comic Sans is good actually](https://www.thecut.com/2020/08/the-reason-comic-sans-is-a-public-good.html).
 
-I unironically use &amp; love [Comic Code Ligatures](https://www.myfonts.com/fonts/tabular-type-foundry/comic-code-ligatures) as my coding/terminal font. I spend all day staring at terminals and editors and I find it easier on the eyes at smaller sizes than other monospace fonts I’ve tried! Totally worth the money in my opinion.
+I unironically use &amp; love [Comic Code Ligatures](https://tosche.net/fonts/comic-code) as my coding/terminal font. I spend all day staring at terminals and editors and I find it easier on the eyes at smaller sizes than other monospace fonts I’ve tried! Totally worth the money in my opinion.
 
 ## Local dev file serving
 

@@ -3,7 +3,6 @@ layout: ../../layouts/BlogPost.astro
 title: how I read papers
 description: by skipping the boring parts
 publishDate: 2022-02-26
-version: 1
 ---
 
 _Listening to: [Retirement Party — Runaway Dog](https://counterintuitiverecords.bandcamp.com/album/retirement-party-runaway-dog)_

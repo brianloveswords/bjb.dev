@@ -3,7 +3,6 @@ layout: ../../layouts/BlogPost.astro
 title: "fp in scala: typesafe charges"
 description: probably not a good idea, but let's give it a shot
 publishDate: 2022-08-09
-version: 1
 ---
 
 I'm reading the second edition of [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala-second-edition) and this is an example from the first chapter:

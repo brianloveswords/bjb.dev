@@ -3,7 +3,6 @@ layout: ../../layouts/BlogPost.astro
 title: thinking about 10-digit keypads
 description: committing math crimes with imaginary safes
 publishDate: 2022-03-27
-version: 4
 ---
 
 Let's say we're thieves and we're breaking into a safe. It uses a standard 10-digit keypad and requires a 4-digit code.
