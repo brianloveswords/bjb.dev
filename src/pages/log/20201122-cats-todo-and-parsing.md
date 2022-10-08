@@ -67,7 +67,7 @@ Suboptimally!
 
 I’m using [commonmark-java](https://github.com/atlassian/commonmark-java) so I could write an extension to handle this. That’d probably give the best performance.
 
-But I don’t want to write a commonmark-java extension, I want to [<strike>turn people into dinosaurs</strike>](https://www.jwz.org/blog/2015/01/but-i-dont-want-to-cure-cancer-i-want-to-turn-people-into-dinosaurs/) write [FastParse](https://www.lihaoyi.com/fastparse/) parsers.
+But I don’t want to write a commonmark-java extension, I want to [<strike>turn people into dinosaurs</strike>](https://www.jwz.org/blog/2015/01/but-i-dont-want-to-cure-cancer-i-want-to-turn-people-into-dinosaurs/) write [FastParse](https://github.com/com-lihaoyi/fastparse) parsers.
 
 Why? Because
 
