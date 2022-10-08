@@ -23,7 +23,7 @@ Anyway, back to Demen. That description is spot on. This album makes my brain go
 
 ## Linters for learning
 
-I’m using [Lighthouse](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbjb.dev) to test as I develop this site. I think about it like a linter for end-user affecting website best practices. I’ve spent the last few years in data engineering, before that I was people managing, and before _that_ I was doing mostly API design, so it’s been exactly One Hot Minute since I’ve been the person directly hook for this stuff. Already I’m learning a lot!
+I’m using [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to test as I develop this site. I think about it like a linter for end-user affecting website best practices. I’ve spent the last few years in data engineering, before that I was people managing, and before _that_ I was doing mostly API design, so it’s been exactly One Hot Minute since I’ve been the person directly hook for this stuff. Already I’m learning a lot!
 
 For example I pulled in that font yesterday, and that brought me some new suggestions. First was using `<link rel="preload">` on the font files since they’re in the critical render path. Cool, I popped those in and immediately got some errors. Turns out for font files in particular, “[because of various reasons](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#CORS-enabled_fetches)” the `crossorigin` attribute has to be set, even when it’s not a cross origin request!
 
