@@ -41,7 +41,7 @@ Turns out, nope, desktop Safari only supports it on Big Sur!
 
 Yeah, that’s probably what I’m going to do going forward. I was hoping I could get away with just using one format because these posts are composed in Markdown and it’s nice be able to use `![alt](path)`, which translates to a straight up `<img>` element and does not support multiple sources.
 
-I already have [some preprocessing to deal with code blocks](2020-11-22.html#parsers), so I’m considering tacking on another parser to do some fancy stuff with multiple image sourcing.
+I already have [some preprocessing to deal with code blocks](/log/20201122-cats-todo-and-parsing/#parsers), so I’m considering tacking on another parser to do some fancy stuff with multiple image sourcing.
 
 Once my brain gets rolling on this stuff I have to be careful to reign it in—the very next thing I thought was “if I’m gonna write a parser to work with image references, why not make something that does WebP and AVIF encoding automatically from a source image referenced in the markdown!” but no, stop it brain that’s a bad idea.
 
