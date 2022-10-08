@@ -12,7 +12,7 @@ I got into Nothing because of the [Relapse Sampler 2019](https://relapsesampler.
 Turns out they are great, even if the album cover for [their last album](https://nothing.bandcamp.com/album/dance-on-the-blacktop) freaks me out.
 
 ## Vera up for adoption
-She’s up on [petfinder.com](https://www.petfinder.com/cat/vera-super-sweet-angel-kitten-49775327/ny/brooklyn/brooklyn-animal-action-ny947/?referrer_id=43175718-802f-4330-b820-5409ad5d909e)!
+She’s up on petfinder.com <em>edit 2022-10-07: link is now dead</em>
 
 ## Ziggy going up soon
 I find writing cat bios very difficult.
