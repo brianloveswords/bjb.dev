@@ -11,10 +11,17 @@ The published rate limit for the API is 25k/day, 240 for every 4 minutes. That m
 
 I can't get anywhere close to that.
 
-After my job runs for about 10m the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another poor soul encountering this. Here are my graphs:
+After my job runs for about 10m the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another poor soul encountering this.
 
-<!-- insert graphs here -->
-<img alt="graphs from pagespeed api monitor show a plateau of 200s at about 1 request/second for about , followed by a valley of 500s for about 5m" src="/public/assets/20221009-pagespeed-graphs.jpg">
+My graphs from the pagespeed api monitor show a timeseries of successful 200 responses at about 1 request/second for about, followed by a steep dropoff and a rise of 500s for about 5m before returning to all 200s.
+
+I did another run about 10m later where I went from 30 to 60 workers, and that exhibits similar behavior. We are able to achieve higher throughput during the good times, but the good times last much shorter before the bad times.
+
+<img
+  alt="screenshot of the graph mentioned in the paragraphs above"
+  width=600
+  height=445
+  src="/assets/20221009-pagespeed-graphs.jpg">
 
 This is consistent across dozens of runs at this point, and the error valleys happen between every 450-500 requests.
 
