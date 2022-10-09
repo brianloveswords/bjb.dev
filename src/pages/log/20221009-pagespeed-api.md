@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/BlogPost.astro
+title: pagespeed insights API has a secret rate limit
+description: c'mon just give me a 429
+publishDate: 2022-10-09
+---
+
+I gotta run PageSpeed against a couple thousand urls. The published rate limit: 25k/day, 240 for every 4 minutes. That means it's theoretically capable of 4 requests/per second.
+
+I can't get anywhere close to that at a sustained rate because after a while the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another poor soul encountering this. Here are my graphs:
+
+<!-- insert graphs here -->
+<img alt="graphs from pagespeed api monitor show a plateau of 200s at about 1 request/second for about , followed by a valley of 500s for about 5m" src="/public/assets/20221009-pagespeed-graphs.jpg">
+
+This is consistent across dozens of runs at this point, and the error valleys happen between every 450-500 requests.
+
+## speculation
+
+My theory is that this is some sort of per-origin limit. I tested this by spinning up another job using the same API key but targeting a different origin, and those requests worked fine while the original job was still busy 500ing.
+
+## mitigation
+
+I have 30 workers and they are set to sleep between 1 and 180 seconds when they hit a 500. They're currently set to retry forever, and I have a 4 hour timeout on the whole job. A worker or two might get caught up in a neverending loop of 500 but that's fine.
+
+I have a standard set of URLs I'm fetching pagespeed for, and that set is shuffled at the start of each run so even the job only ever finishes 95% of the urls, it's at least a different 95% each time.
+
+## also the java client just sticks the API key in the url?
+
+A real bummer when there's an error that causes the internal Google HTTP library to dump the URL as part of the error message. Thanks for leaking my keys to the logs! Now I'm careful to wrap everything and scrub the key from all error output. I've also locked down the key so it's only able to be used for the PageSpeed API.
+
+## listening to
+
+HOLY FAWN - Dimensional Bleed
+<iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=3479062547/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless><a href="https://holyfawn.bandcamp.com/album/dimensional-bleed">Dimensional Bleed by HOLY FAWN</a></iframe>
