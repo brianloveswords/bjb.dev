@@ -5,9 +5,13 @@ description: c'mon just give me a 429
 publishDate: 2022-10-09
 ---
 
-I gotta run PageSpeed against a couple thousand urls. The published rate limit: 25k/day, 240 for every 4 minutes. That means it's theoretically capable of 4 requests/per second.
+I gotta run [PageSpeed Insights](https://pagespeed.web.dev/) against a couple thousand urls. The team wants to use core web vitals to start prioritizing improvements. On the data side, we want to see if we can correlate changes in core web vitals to changes in customer behavior.
 
-I can't get anywhere close to that at a sustained rate because after a while the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another poor soul encountering this. Here are my graphs:
+The published rate limit for the API is 25k/day, 240 for every 4 minutes. That means it's theoretically capable of 4 requests/per second.
+
+I can't get anywhere close to that.
+
+After my job runs for about 10m the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another poor soul encountering this. Here are my graphs:
 
 <!-- insert graphs here -->
 <img alt="graphs from pagespeed api monitor show a plateau of 200s at about 1 request/second for about , followed by a valley of 500s for about 5m" src="/public/assets/20221009-pagespeed-graphs.jpg">
@@ -16,13 +20,17 @@ This is consistent across dozens of runs at this point, and the error valleys ha
 
 ## speculation
 
-My theory is that this is some sort of per-origin limit. I tested this by spinning up another job using the same API key but targeting a different origin, and those requests worked fine while the original job was still busy 500ing.
+My theory is that this is some sort of per-origin limit. I tested this by spinning up another job using the same API key but targeting a different origin, and those requests worked totally fine while every worker in the original job was still busy 500ing.
+
+I wonder if that per-origin limit is related to how expensive it is to do the pagespeed analysis? The main one I'm running against has fairly poor performance—it's why I'm doing this to begin with.
+
+Maybe the pagespeed api is all "I'm fuckin sick of waiting around for your garbage pages to load, gimme like 5 minutes, fuckkk" but if I were running against something that didn't have 30s LCPs maybe it'd be happier?
 
 ## mitigation
 
-I have 30 workers and they are set to sleep between 1 and 180 seconds when they hit a 500. They're currently set to retry forever, and I have a 4 hour timeout on the whole job. A worker or two might get caught up in a neverending loop of 500 but that's fine.
+I have the job configured to run 30 workers and they are set to sleep between 1 and 180 seconds when they hit a 500. They're currently set to retry forever, and I have a 4 hour timeout on the whole job. A worker or two might get caught up in a neverending loop of 500 but that's fine.
 
-I have a standard set of URLs I'm fetching pagespeed for, and that set is shuffled at the start of each run so even the job only ever finishes 95% of the urls, it's at least a different 95% each time.
+I have a standard set of URLs I'm fetching pagespeed for, and that set is shuffled at the start of each run so even the job only ever finishes 95% of the urls, at least it's a different 95% each time.
 
 ## also the java client just sticks the API key in the url?
 
