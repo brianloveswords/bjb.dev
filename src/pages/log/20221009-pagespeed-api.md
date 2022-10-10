@@ -35,7 +35,7 @@ Maybe the pagespeed api is all "I'm fuckin sick of waiting around for your garba
 
 ## mitigation
 
-I have the job configured to run 30 workers and they are set to sleep between 1 and 180 seconds when they hit a 500. They're currently set to retry forever, and I have a 4 hour timeout on the whole job. A worker or two might get caught up in a neverending loop of 500 but that's fine.
+I have the job configured to run 16 workers and they are set to sleep between 1 and 180 seconds when they hit a 500. This seems to be the sweet spot for not getting caught up in too many 500s. They workers are currently set to retry forever, but I have a 4 hour timeout on the whole job so even if a worker gets caught in an infinite 500 loop, the job will eventually terminate.
 
 I have a standard set of URLs I'm fetching pagespeed for, and that set is shuffled at the start of each run so even the job only ever finishes 95% of the urls, at least it's a different 95% each time.
 
