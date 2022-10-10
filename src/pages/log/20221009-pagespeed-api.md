@@ -11,7 +11,7 @@ The published rate limit for the API is 25k/day, 240 for every 4 minutes. That m
 
 I can't get anywhere close to that.
 
-After my job runs for about 10m the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another poor soul encountering this.
+After my job runs for about 10m the API shits itself and starts returning `500: Unable to process request` for about 5 minutes before recovering. This [unanswered Stack Overflow question from Sept 2021](https://stackoverflow.com/questions/69391324/why-is-pagespeed-insights-api-returning-unable-to-process-request-even-within) has details from another lost soul encountering this.
 
 My graphs from the pagespeed api monitor show a timeseries of successful 200 responses at about 1 request/second for about, followed by a steep dropoff and a rise of 500s for about 5m before returning to all 200s.
 
