@@ -37,6 +37,12 @@ Maybe the pagespeed api is all "I'm fuckin sick of waiting around for your garba
 
 I have the job configured to run 16 workers and they are set to sleep between 1 and 180 seconds when they hit a 500. This seems to be the sweet spot for not getting caught up in too many 500s. They workers are currently set to retry forever, but I have a 4 hour timeout on the whole job so even if a worker gets caught in an infinite 500 loop, the job will eventually terminate.
 
+<img
+  alt="screenshot of graphs showing 16 workers not hitting too many errors, pretty smooth line of 200s"
+  width=600
+  height=449
+  src="/assets/20221009-pagespeed-graphs-16-workers.jpg">
+
 I have a standard set of URLs I'm fetching pagespeed for, and that set is shuffled at the start of each run so even the job only ever finishes 95% of the urls, at least it's a different 95% each time.
 
 ## also the java client just sticks the API key in the url?
