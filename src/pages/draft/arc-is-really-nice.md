@@ -10,3 +10,7 @@ version: 1
 - i remember when I first switched from internet explorer to mozilla (before firefox!)
 - this is giving me similar vibes. actually new user experiences in browsing!
 - easel is incredible
+- split view is such a no-brainer and invaluable
+- tons of nice little UI touches
+- it feels personal
+- a little buggy

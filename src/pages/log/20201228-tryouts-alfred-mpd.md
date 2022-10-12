@@ -25,8 +25,7 @@ Fortunately there’s an option for that! Changing the option from “fuzzy capi
   <img
     alt="screenshot showing switching the fuzzy match preference"
     src=/assets/2020-12-28-fuzzy-match.jpg
-    width=400
-    height=212>
+    style="max-height: 212px">
 </center>
 
 Making workflows in Alfred is a bit more clicking than I might like, but otherwise it’s dead simple.
@@ -51,8 +50,7 @@ There’s a reference command line app for controlling MPD called `mpc`. It maps
   <img
     alt="screenshot showing switching the fuzzy match preference"
     src=/assets/2020-12-28-alfred-workflow.jpg
-    width=800
-    height=621>
+    style="max-height: 621px">
 </center>
 
 Most of those shell scripts are one-line proxies to the relevant `mpc` command, but some of them require a few more steps. Here’s `mpc-play-album`:
@@ -81,8 +79,7 @@ I organize my music in a 1-layer folder hierarchy (`<artist> - album>/<songs>`) 
   <img
     alt="screenshot showing switching the fuzzy match preference"
     src=/assets/2020-12-28-play.jpg
-    width=600
-    height=340>
+    style="max-height: 340px">
 </center>
 
 Let’s look at one more action.

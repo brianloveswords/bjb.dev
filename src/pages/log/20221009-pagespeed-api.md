@@ -19,8 +19,7 @@ I did another run about 10m later where I went from 30 to 60 workers, and that e
 
 <img
   alt="screenshot of the graph mentioned in the paragraphs above"
-  width=600
-  height=445
+  style="max-height: 455px;"
   src="/assets/20221009-pagespeed-graphs.jpg">
 
 This is consistent across dozens of runs at this point, and the error valleys happen between every 450-500 requests.
@@ -39,8 +38,7 @@ I have the job configured to run 16 workers and they are set to sleep between 1 
 
 <img
   alt="screenshot of graphs showing 16 workers not hitting too many errors, pretty smooth line of 200s"
-  width=600
-  height=449
+  style="max-height: 449px;"
   src="/assets/20221009-pagespeed-graphs-16-workers.jpg">
 
 I have a standard set of URLs I'm fetching pagespeed for, and that set is shuffled at the start of each run so even the job only ever finishes 95% of the urls, at least it's a different 95% each time.
