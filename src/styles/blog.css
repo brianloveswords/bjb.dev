@@ -43,6 +43,10 @@ p > code {
     border-radius: .3em;
 }
 
+pre code[class*=language-] {
+    font-size: 0.8em;
+}
+
 
 img {
     max-width: 100%;

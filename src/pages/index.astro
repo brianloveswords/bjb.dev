@@ -1,47 +1,54 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import BlogIndexLine from '../components/BlogIndexLine.astro';
-import { title, description, baseURL } from "../meta"
+import BaseHead from "../components/BaseHead.astro";
+import BlogIndexLine from "../components/BlogIndexLine.astro";
+import { title, description, baseURL } from "../meta";
 let posts = Astro.fetchContent("./log/*.md")
-	.filter(a => a?.publishDate?.toLowerCase() != 'draft')
-	.sort((a,b) => b.publishDate > a.publishDate ? 1 : -1)
-	.map(post => {
-		post.description = post.description ?? post.title;
-		return post;
-	});
+    .filter((a) => a?.publishDate?.toLowerCase() != "draft")
+    .sort((a, b) => (b.publishDate > a.publishDate ? 1 : -1))
+    .map((post) => {
+        post.description = post.description ?? post.title;
+        return post;
+    });
 
 let sites = [
-	{ text: "jennschiffer.com" },
-	{ text: "programmingisterrible.com" },
-	{ text: "jvns.ca" },
-	{ text: "hillelwayne.com" },
-	{ text: "copyconstruct.medium.com" },
-	{ text: "fasterthanli.me" },
-	{ text: "lexi-lambda.github.io" },
-	{ text: "danluu.com" },
-	{ text: "vicki.substack.com", url:"https://vicki.substack.com/people/919000-vicki-boykis" },
+    { text: "jennschiffer.com" },
+    { text: "programmingisterrible.com" },
+    { text: "jvns.ca" },
+    { text: "hillelwayne.com" },
+    { text: "copyconstruct.medium.com" },
+    { text: "fasterthanli.me" },
+    { text: "lexi-lambda.github.io" },
+    { text: "danluu.com" },
+    { text: "vicki.substack.com", url: "https://vicki.substack.com/people/919000-vicki-boykis" },
 ];
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} baseURL={baseURL} />
-	</head>
-	<body>
-		<h1>brianloveswords</h1>
-		<ul>
-			{ posts.map(post => <BlogIndexLine post={post}/>) }
-		</ul>
-		<h2>websites I like</h2>
-		<ul>
-			{ sites.map(site => <li><a href={site.url ?? `https://${site.text}`}>{site.text}</a></li>) }
-		</ul>
-		<h2>other places where I'm me</h2>
-		<ul>
-			<li><a href="https://bandcamp.com/brianloveswords">bandcamp.com/brianloveswords</a></li>
-			<li><a href="https://twitter.com/brianloveswords">twitter.com/brianloveswords</a></li>
-			<li><a href="https://github.com/brianloveswords">github.com/brianloveswords</a></li>
-			<li><a href="mailto:brianloveswords+👋🏽@gmail.com">brianloveswords@gmail.com</a></li>
-		</ul>
-	</body>
+    <head>
+        <BaseHead title={title} description={description} baseURL={baseURL} />
+    </head>
+    <body>
+        <h1>brianloveswords</h1>
+        <ul>
+            {posts.map((post) => <BlogIndexLine post={post} />)}
+        </ul>
+        <h2>websites I like</h2>
+        <ul>
+            {
+                sites.map((site) => (
+                    <li>
+                        <a href={site.url ?? `https://${site.text}`}>{site.text}</a>
+                    </li>
+                ))
+            }
+        </ul>
+        <h2>other places where I'm me</h2>
+        <ul>
+            <li><a href="https://bandcamp.com/brianloveswords">bandcamp.com/brianloveswords</a></li>
+            <li><a href="https://github.com/brianloveswords">github.com/brianloveswords</a></li>
+            <li><a href="https://twitter.com/brianloveswords">twitter.com/brianloveswords</a></li>
+            <li><a href="https://cohost.org/brianloveswords">cohost.com/brianloveswords</a></li>
+            <li><a href="mailto:brianloveswords+👋🏽@gmail.com">brianloveswords@gmail.com</a></li>
+        </ul>
+    </body>
 </html>

@@ -1,0 +1,17 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { baseURL } from "../meta"
+
+let { content } = Astro.props;
+let { title, description, publishDate, listening } = content;
+---
+
+<html lang={content.lang ?? 'en'}>
+	<head>
+		<BaseHead title={title} description={description} baseURL={baseURL} />
+	</head>
+
+	<body>
+		<slot />
+	</body>
+</html>
