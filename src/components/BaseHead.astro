@@ -49,6 +49,14 @@ const { title, description, image = '/assets/brian-kittens.jpg' } = Astro.props;
 	crossorigin
 />
 
+<!-- RSS feed -->
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    href="/rss.xml"
+    title="RSS Feed"
+/>
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 

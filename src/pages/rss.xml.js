@@ -27,6 +27,7 @@ export async function GET(context) {
           "*",
         ],
         allowedAttributes: {
+          a: ["name", "href", "title"],
           img: ["src", "srcset", "alt", "title", "width", "height", "loading"],
           iframe: [
             "src",
