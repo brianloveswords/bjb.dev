@@ -1,20 +1,32 @@
 ---
 title: vibe check no. 1
-description: desire to tinker, invisalign, and a new domain
-pubDate: 0000-11-03
+description: tinkering, aligning, horror...ing?
+pubDate: 2024-11-03
 ---
 
 shoutout to Dave Rupert's [vibe checks](https://daverupert.com/2024/10/vibe-check-35/) for the inspiration
 
 ## 🛠️ desire to tinker: rising
 - registered a new domain: brianlovewords.com
-    - there's nothing there yet
-- initially for my [Bluesky](https://bsky.app/profile/brianloveswords.com) handle
-- might transfer my blog there eventually, use this domain for small projects or something
-    - _after 301'ing everything!_
+    - for my [Bluesky](https://bsky.app/profile/brianloveswords.com) handle, nothing's there yet
+        - might transfer my blog there eventually, use this domain for small projects or something
+            - _after 301'ing everything!_
+- finally got an RSS feed up in here!
+    - more recent versions of Astro have a plugin for it
+        - i was on 0.23 😬, updated to something respectable
+- quick & hacky way to author in Obsidian
+    - got my Obsidian set up _just right_ for writing stuff
+    - don't want to stick a whole git repo into Obsidian
+    - fuck it, just hard link
+        - i always create files in Obsidian first
+        - wrote a little script that links anything that's not linked yet
 
 ## 🦷 month 2 of invisalign
-- first week or so sucked!
+- first week sucked!
+    - getting the attachments sucked
+        - i didn't ask enough questions and they didn't explain enough
+        - left a lot of extra teeth concrete or whatever, hated how my teeth felt after it
+            - all the extra has since come off with attaching/detaching aligners and brushing
 - do not regret getting a sonic cleaner
     - spent about a week brushing them by hand
         - it sucked
@@ -23,6 +35,8 @@ shoutout to Dave Rupert's [vibe checks](https://daverupert.com/2024/10/vibe-chec
         - hope this thing doesn't fall apart in a year
     - got Retainer Brite tablets
         - didn't know until now when I was looking it up, but their [website](https://theretainerbrite.com/) has entirely too many AI generated people
+    - works great, way better than brushing manually
+        - spouse also uses it for jewelry, so it's getting more use than i expected
 - honestly, kinda like the routine it imposes
     - really making me cut down on my snacking
     - …but it's been hard past few weeks when traveling for long all-day work events and I can't control my own eating schedule
