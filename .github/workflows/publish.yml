@@ -6,29 +6,27 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
-      - name: build the project
+
+      - name: use node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
           cache: "npm"
 
-      - name: Load secret
+      - name: load secrets
         uses: 1password/load-secrets-action@v2
         with:
-          # Export loaded secrets as environment variables
           export-env: true
         env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           GCP_CREDS: op://cicd-blog/google-cloud/service-account.json
           CLOUDFLARE_ZONE: op://cicd-blog/cloudflare/zone
           CLOUDFLARE_API_TOKEN: op://cicd-blog/cloudflare/api token

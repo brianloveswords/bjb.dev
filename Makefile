@@ -2,11 +2,6 @@
 export SITE = bjb.dev
 export CLOUD_PROJECT := brianloveswords
 
-## 🔑 secrets 🔑
-export GCP_CREDS := op://cicd-blog/google-cloud/service-account.json
-export CLOUDFLARE_ZONE := op://cicd-blog/cloudflare/zone
-export CLOUDFLARE_API_TOKEN := op://cicd-blog/cloudflare/api token
-
 ## defined by Astro, unlikely to change
 export BUILD_DIR = dist
 
@@ -49,7 +44,7 @@ local/clean :
 
 # authenticates with gcloud
 cloud/auth :
-	@op run -- scripts/activate-service-account.sh
+	@scripts/activate-service-account.sh
 
 
 # synchronizes the local build with the cloud storage bucket
@@ -67,4 +62,4 @@ cloud/sync/dry-run : cloud/auth local/build
 
 # purges the CDN cache
 cdn/cache/purge :
-	@op run -- scripts/cdn-cache-purge.sh
+	@scripts/cdn-cache-purge.sh

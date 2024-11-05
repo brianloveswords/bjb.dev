@@ -2,26 +2,13 @@
 
 set -euo pipefail
 
+# purges the CDN cache
+#
+# requires:
+#   - CLOUDFLARE_API_TOKEN
+#   - CLOUDFLARE_ZONE
+
 function main() {
-    # this syntax for setting a default value if the variable is not set
-    # is absolutely ridiculous.
-    : ${READY_TO_PURGE_CACHE:="false"}
-
-    if [[ "${READY_TO_PURGE_CACHE}" == "true" ]]; then
-        purge_cache
-    else
-        setup
-    fi
-}
-
-function setup() {
-    echo "cloudflare-purge-cache: setting up environment variables"
-    export READY_TO_PURGE_CACHE=true
-
-    op run -- ${0}
-}
-
-function purge_cache() {
     echo "cloudflare-purge-cache: firing the lasers"
     curl -X POST --silent \
         "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
