@@ -2,6 +2,8 @@
 title: vibe check no. 1
 description: tinkering, aligning, horror...ing?
 pubDate: 2024-11-03
+created: 2024-01-21T15:36
+updated: 2024-11-03T23:08
 ---
 
 shoutout to Dave Rupert's [vibe checks](https://daverupert.com/2024/10/vibe-check-35/) for the inspiration

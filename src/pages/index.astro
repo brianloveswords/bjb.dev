@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const posts = (await getCollection('log'))
     .filter((a) => a.data.pubDate.getUTCFullYear() != 0)
+    .filter((a) => a.data.unlisted !== true)
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const sites = [
