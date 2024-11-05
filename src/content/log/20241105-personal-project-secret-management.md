@@ -1,0 +1,68 @@
+---
+title: personal project secret management
+description: messing with the 1Password CLI
+pubDate: 2024-11-04
+unlisted: true
+---
+
+- backstory
+    - sticking things in environment variables where that made sense
+    - sometimes needed files e.g. service account json blobs
+        - if they were global, keep them out of the repo, if they were local, put those into some .gitignore'd directory
+            - never really loved this! always worried I'd accidentally check it in.
+    - don't really love having secrets all over the place!
+- read 1Password has CLI for doing secret management
+- evolution of a script
+    - using make as a task runner
+        - i'm old fashioned
+    - for environment vars
+        - show cdn cache purge
+            - original environment variable version
+            - `op item get` version
+            - `op read` version
+            - `op run` version
+    - for files
+        - original version, file in `.private`
+        - `op document get` version, putting in a tmpfile
+            - don't love writing the secret to disk for any amount of time, really
+        - `op read` version, putting it in fifo
+            - one-time only read is an improvement
+            - don't love having to cleanup
+        - `op run` version, sticking it in the environment
+            - I did this on accident
+            - didn't realize it would work, but it does
+            - get to use standard pipe 
+                - instead of creating a custom one
+                - but that was the inspiration for checking that it would take `-`
+                - shoutout `gcloud` cli for respecting `-`
+                    - if you're writing a cli, always give me some way to throw stuff at stdin!
+    - as fun as all that was though... 
+        - it meant a lot of stuff had to know about `op`
+        - we can lift op one more level out, so even the makefile doesn't need to know about it
+            - inject it at the top level
+                - makefile doesn't need to know about it
+            - wrapper script for auth tasks
+                - `.env` file
+                - `scripts/with-secrets.sh <command>`
+        - this ends up being better for cicd anyway
+            - only `load secrets` task needs `op` and token
+- using in GHA
+    - create a service account
+        - https://developer.1password.com/docs/service-accounts/get-started/
+    - new vault with minimum set of secrets
+        - don't give it access to your main vault
+        - read only access
+        - you can rename it even after creating a service key for it
+            - found this out after i made a bad initial name for it
+    - limit duration of service account
+        - picked 90 days
+            - good enough for let's encrypt
+        - i'm okay to have to do a 3 minute task every 90 days
+            - `op service-account create test123 --raw --expires-in 90d --vault gha:read_items | pbcopy`
+                - ctrl-r, '90d'
+            - update in 1Password with new expiration date
+            - add to GitHub repository secrets
+                - linked in the 1Password note
+    - instructions for GHA
+        - https://developer.1password.com/docs/ci-cd/github-actions
+    - show final workflow file
