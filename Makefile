@@ -1,9 +1,20 @@
-SITE := bjb.dev
-PROJECT := brianloveswords
-BUILD_DIR := dist
+## site configuration
+export SITE = bjb.dev
+export CLOUD_PROJECT := brianloveswords
 
-update-remote : clean build push cache-purge
+## 🔑 secrets 🔑
+export GCP_CREDS := op://gha/google-cloud/service-account.json
+export CLOUDFLARE_ZONE := op://gha/cloudflare/zone
+export CLOUDFLARE_API_TOKEN := op://gha/cloudflare/api token
 
+## defined by Astro, unlikely to change
+export BUILD_DIR = dist
+
+default : local/clean publish
+
+##
+## real files
+##
 
 package-lock.json : package.json
 	@npm install
@@ -12,29 +23,47 @@ package-lock.json : package.json
 node_modules : package-lock.json
 	@touch node_modules
 
+##
+## tasks
+##
 
-build : node_modules
+# publish the site to the internet
+publish : cloud/sync cdn/cache/purge
+
+
+# run the development server
+local/dev : node_modules
+	@npm run dev
+
+
+# build the site
+local/build : node_modules
 	@npm run build
-.PHONY: build
 
 
-auth :
-	@scripts/activate-service-account.sh
-
-push : NODE_ENV=production
-push : auth build
-	@gsutil -m rsync -d -c -r ${BUILD_DIR} gs://${SITE}
+# clean the build directory
+local/clean :
+	@scripts/clean-build-dir.sh
 
 
-push-dry-run : auth build
-	@gsutil -m rsync -d -c -r -n ${BUILD_DIR} gs://${SITE}
+# authenticates with gcloud
+cloud/auth :
+	@op run -- scripts/activate-service-account.sh
 
 
-cache-purge :
-	@scripts/cloudflare-cache-purge.sh
+# synchronizes the local build with the cloud storage bucket
+cloud/sync : NODE_ENV=production
+cloud/sync : cloud/auth local/build
+	@scripts/storage-sync.sh
 
-publish : push cache-purge
 
 
-clean :
-	@rm -rf dist
+# dry run of the sync, show what files would change
+cloud/sync/dry-run : SYNC_DRY_RUN=true
+cloud/sync/dry-run : cloud/auth local/build
+	@scripts/storage-sync.sh
+
+
+# purges the CDN cache
+cdn/cache/purge :
+	@op run -- scripts/cdn-cache-purge.sh
