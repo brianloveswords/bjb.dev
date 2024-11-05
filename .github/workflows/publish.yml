@@ -28,9 +28,9 @@ jobs:
           export-env: true
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-          GCP_CREDS: op://gha/google-cloud/service-account.json
-          CLOUDFLARE_ZONE: op://gha/cloudflare/zone
-          CLOUDFLARE_API_TOKEN: op://gha/cloudflare/api token
+          GCP_CREDS: op://cicd-blog/google-cloud/service-account.json
+          CLOUDFLARE_ZONE: op://cicd-blog/cloudflare/zone
+          CLOUDFLARE_API_TOKEN: op://cicd-blog/cloudflare/api token
 
       - run: npm install
       - run: make
