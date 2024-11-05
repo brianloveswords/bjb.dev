@@ -3,9 +3,9 @@ export SITE = bjb.dev
 export CLOUD_PROJECT := brianloveswords
 
 ## 🔑 secrets 🔑
-export GCP_CREDS := op://private/google-cloud/service-account.json
-export CLOUDFLARE_ZONE := op://gha/cloudflare/zone
-export CLOUDFLARE_API_TOKEN := op://gha/cloudflare/api token
+export GCP_CREDS := op://cicd-blog/google-cloud/service-account.json
+export CLOUDFLARE_ZONE := op://cicd-blog/cloudflare/zone
+export CLOUDFLARE_API_TOKEN := op://cicd-blog/cloudflare/api token
 
 ## defined by Astro, unlikely to change
 export BUILD_DIR = dist

@@ -21,5 +21,16 @@ jobs:
           node-version: 22.x
           cache: "npm"
 
+      - name: Load secret
+        uses: 1password/load-secrets-action@v2
+        with:
+          # Export loaded secrets as environment variables
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          GCP_CREDS: op://gha/google-cloud/service-account.json
+          CLOUDFLARE_ZONE: op://gha/cloudflare/zone
+          CLOUDFLARE_API_TOKEN: op://gha/cloudflare/api token
+
       - run: npm install
-      - run: make local/build
+      - run: make
