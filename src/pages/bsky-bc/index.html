@@ -41,6 +41,7 @@
       }
     </style>
     <style id="tag-filter-style"></style>
+    <style id="title-filter-style"></style>
   </head>
   <body>
     <h1 class="page-title">
@@ -61,9 +62,7 @@
       <p>
         there's a script running on my NAS watching the bluesky firehose and
         saving every post that contain a bandcamp URL. every so often i pull
-        that down, run it through some scripts that generate this page. NAS is
-        pretty feeble so it can't always keep up with the feed. sorry if your
-        post does not show up!! i'll move it somewhere better soon.
+        that down, run it through some scripts that generate this page.
       </p>
       <p>
         eventually i'll automate the updates, but i'm trying to put up stuff
@@ -105,6 +104,14 @@
         placeholder="filter by tags"
       />
       <datalist id="tags"></datalist>
+
+      <input
+        list="titles"
+        id="title-filter"
+        type="search"
+        placeholder="filter by title"
+      />
+      <datalist id="titles"></datalist>
     </header>
     <div id="main"></div>
     <script src="/bsky-bc/album-data.js"></script>

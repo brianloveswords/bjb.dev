@@ -2,6 +2,8 @@ const mainList = document.getElementById("main");
 const tagList = document.getElementById("tags");
 const tagFilter = document.getElementById("tag-filter");
 const tagFilterStyle = document.getElementById("tag-filter-style");
+const titleFilter = document.getElementById("title-filter");
+const titleFilterStyle = document.getElementById("title-filter-style");
 const headerTitle = document.getElementById("header-item-title");
 const headerTags = document.getElementById("header-item-tags");
 const infoLastUpdated = document.getElementById("last-updated");
@@ -29,14 +31,15 @@ function main() {
 
     const container = document.createElement("div");
     container.className = "item";
-    container.dataset.title = album.title;
-    container.dataset.tags = cleanTags.map((s) => `[${s}]`).join(" ");
+    container.dataset.filterTitle = album.title.toLowerCase();
+    container.dataset.filterTags = cleanTags.map((s) => `[${s}]`).join(" ");
 
     container.addEventListener("mouseover", showDetails);
     container.addEventListener("focus", showDetails);
 
     const link = document.createElement("a");
     link.href = album.uri;
+    link.addEventListener("focus", showDetails);
     container.appendChild(link);
 
     const img = document.createElement("img");
@@ -47,7 +50,6 @@ function main() {
 
     const embed = createEmbed(album);
     embed.addEventListener("focus", showDetails);
-    link.addEventListener("focus", showDetails);
 
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -82,7 +84,7 @@ function main() {
 
     const selectorBody = value
       .split(",")
-      .map((s) => `[data-tags*="${s.trim()}"]`)
+      .map((s) => `[data-filter-tags*="${s.trim()}"]`)
       .join("");
     const selector = `.item:not(${selectorBody})`;
     const content = `display:none;`;
@@ -91,6 +93,25 @@ function main() {
   });
 
   setInitialFilterFromUrlParams();
+
+  // enable the title filter
+  titleFilter.addEventListener("input", (e) => {
+    const value = e.target.value.trim();
+
+    if (!value) {
+      titleFilterStyle.textContent = "";
+      return;
+    }
+
+    const selectorBody = value
+      .split(/\s+/)
+      .map((s) => `[data-filter-title*="${s.trim()}"]`)
+      .join("");
+    const selector = `.item:not(${selectorBody})`;
+    const content = `display:none;`;
+    const css = `${selector} { ${content} }`;
+    titleFilterStyle.textContent = css;
+  });
 }
 
 function setInitialFilterFromUrlParams() {
