@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>bluesky bandcamp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #000;
+        color: #eee;
+      }
+      summary {
+        cursor: pointer;
+      }
+      .page-title {
+        margin: 0;
+      }
+      h1 aside {
+        font-size: 0.8rem;
+      }
+      a {
+        color: #3d83f6;
+        text-decoration: none;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 0.01rem 0em 0.7rem;
+      }
+      h3 {
+        font-size: 0.75rem;
+      }
+      .item {
+        display: inline-block;
+      }
+      .item iframe {
+        border: 0;
+      }
+    </style>
+    <style id="tag-filter-style"></style>
+  </head>
+  <body>
+    <h1 class="page-title">
+      bluesky bandcamp
+      <aside class="page-about">
+        by
+        <a href="https://bsky.app/profile/brianloveswords.com">
+          @brianloveswords.com
+        </a>
+        <br />
+        last updated:
+        <span id="last-updated"> </span>
+      </aside>
+    </h1>
+    <br />
+    <details>
+      <summary>about this page</summary>
+      <p>
+        there's a script running on my NAS watching the bluesky firehose and
+        saving every post that contain a bandcamp URL. every so often i pull
+        that down, run it through some scripts that generate this page. NAS is
+        pretty feeble so it can't always keep up with the feed. sorry if your
+        post does not show up!! i'll move it somewhere better soon.
+      </p>
+      <p>
+        eventually i'll automate the updates, but i'm trying to put up stuff
+        before it's ✨perfect✨, so for now it's manual and i'll update it
+        periodically throughout the day (when i'm not sleeping).
+      </p>
+      <p>
+        if you want to link to the page with filters already filled out, you can
+        use e.g. <a href="?tags=metal">?tags=metal</a>. also, the tag filter
+        input should autocomplete, but it doesn't on Firefox Mobile
+        unfortunately. it's a
+        <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1535985">
+          six year old bug
+        </a>
+        that maybe will get fixed someday.
+      </p>
+      <p>
+        i would like to do more with being able to tell what's playing, maybe do
+        some auto-playing of the next thing in the list, but i'm currently
+        limited by the using the default bandcamp embeds and cross-origin
+        protection, so once that iframe loads i got no clue what's going on in
+        it.
+      </p>
+      <p>
+        feel free to
+        <a href="https://bsky.app/profile/brianloveswords.com">@ me</a> if you
+        have any requests.
+      </p>
+    </details>
+
+    <header>
+      <h2 id="header-item-title">track/album title</h2>
+      <h3 id="header-item-tags">list, of, tags</h3>
+
+      <input
+        list="tags"
+        id="tag-filter"
+        type="search"
+        placeholder="filter by tags"
+      />
+      <datalist id="tags"></datalist>
+    </header>
+    <div id="main"></div>
+    <script src="/bsky-bc/album-data.js"></script>
+    <script src="/bsky-bc/album-render.js"></script>
+  </body>
+</html>
