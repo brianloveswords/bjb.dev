@@ -15,7 +15,6 @@ function main() {
         EXTRA_ARGS="-n"
     fi
 
-
     gsutil -m rsync -d -c -r ${EXTRA_ARGS} ${BUILD_DIR} gs://${SITE}
     gcloud storage objects update "gs://${SITE}/bsky-bc/*" --cache-control="public, max-age=60"
 }

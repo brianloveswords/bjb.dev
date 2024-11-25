@@ -14,10 +14,10 @@ function main() {
   const tags = new Set();
 
   // update lateUpdated
-  infoLastUpdated.textContent = new Date(lastUpdated).toLocaleString();
+  infoLastUpdated.textContent = new Date(GLOBAL.lastUpdated).toLocaleString();
 
   // build the main album list
-  for (const album of albumData) {
+  for (const album of GLOBAL.albums) {
     const cleanTags = album.tags.map((s) => s.trim());
 
     for (const tag of cleanTags) {

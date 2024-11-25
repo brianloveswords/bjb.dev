@@ -49,8 +49,13 @@ cloud/auth :
 
 # synchronizes the local build with the cloud storage bucket
 cloud/sync : NODE_ENV=production
-cloud/sync : cloud/auth local/build
+cloud/sync : cloud/auth cloud/pull/album-data local/build
 	@scripts/storage-sync.sh
+
+
+# pull the album data that gets generated from a separate process
+cloud/pull/album-data : cloud/auth
+	@scripts/pull-album-data.sh
 
 
 
