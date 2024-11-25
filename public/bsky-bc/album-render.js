@@ -18,7 +18,7 @@ function main() {
 
   // build the main album list
   for (const album of GLOBAL.albums) {
-    const cleanTags = album.tags.map((s) => s.trim());
+    const cleanTags = album.tags.map((s) => s.trim().toLowerCase());
 
     for (const tag of cleanTags) {
       tags.add(tag);
