@@ -8,7 +8,71 @@ const headerTitle = document.getElementById("header-item-title");
 const headerTags = document.getElementById("header-item-tags");
 const infoLastUpdated = document.getElementById("last-updated");
 
-const itemSize = 200; //px
+const ITEM_SIZE = 200; //px
+const PAGE_SIZE = 500;
+
+function processAlbum(album, tags) {
+  const cleanTags = album.tags.map((s) => s.trim().toLowerCase());
+
+  for (const tag of cleanTags) {
+    tags.add(tag);
+  }
+
+  function showDetails() {
+    headerTitle.textContent = album.title;
+    headerTags.textContent = cleanTags.join(", ");
+  }
+
+  const container = document.createElement("a");
+  container.href = album.uri;
+  container.className = "item";
+  container.dataset.filterTags = cleanTags.map((s) => `[${s}]`).join(" ");
+  container.dataset.filterTitle = album.title.toLowerCase();
+  container.addEventListener("focus", showDetails);
+  container.addEventListener("mouseover", showDetails);
+
+  const img = document.createElement("img");
+  img.src = album.imageHref;
+  img.loading = "lazy";
+  img.style = `width: ${ITEM_SIZE}px; height: ${ITEM_SIZE}px;`;
+  container.appendChild(img);
+
+  const embed = createEmbed(album);
+  embed.addEventListener("focus", showDetails);
+
+  function replacer(e) {
+    e.preventDefault();
+
+    if (e.shiftKey) {
+      window.open(album.uri, "_blank");
+      return;
+    }
+    container.removeEventListener("click", replacer);
+    container.replaceChild(embed, img);
+  }
+
+  container.addEventListener("click", replacer);
+
+  mainList.appendChild(container);
+}
+
+function processInBatches(remaining, tags) {
+  if (remaining.length === 0) {
+    return;
+  }
+
+  const current = remaining.slice(0, PAGE_SIZE);
+  const next = remaining.slice(PAGE_SIZE);
+  for (const album of current) {
+    processAlbum(album, tags);
+  }
+
+  setTimeout(() => {
+    requestAnimationFrame(() => {
+      processInBatches(next, tags);
+    });
+  }, 333);
+}
 
 function main() {
   const tags = new Set();
@@ -17,53 +81,7 @@ function main() {
   infoLastUpdated.textContent = new Date(GLOBAL.lastUpdated).toLocaleString();
 
   // build the main album list
-  for (const album of GLOBAL.albums) {
-    const cleanTags = album.tags.map((s) => s.trim().toLowerCase());
-
-    for (const tag of cleanTags) {
-      tags.add(tag);
-    }
-
-    function showDetails() {
-      headerTitle.textContent = album.title;
-      headerTags.textContent = cleanTags.join(", ");
-    }
-
-    const container = document.createElement("div");
-    container.className = "item";
-    container.dataset.filterTitle = album.title.toLowerCase();
-    container.dataset.filterTags = cleanTags.map((s) => `[${s}]`).join(" ");
-
-    container.addEventListener("mouseover", showDetails);
-    container.addEventListener("focus", showDetails);
-
-    const link = document.createElement("a");
-    link.href = album.uri;
-    link.addEventListener("focus", showDetails);
-    container.appendChild(link);
-
-    const img = document.createElement("img");
-    img.src = album.imageHref;
-    img.loading = "lazy";
-    img.style = `width: ${itemSize}px; height: ${itemSize}px;`;
-    link.appendChild(img);
-
-    const embed = createEmbed(album);
-    embed.addEventListener("focus", showDetails);
-
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      if (e.shiftKey) {
-        window.open(album.uri, "_blank");
-        return;
-      }
-
-      container.replaceChild(embed, link);
-    });
-
-    mainList.appendChild(container);
-  }
+  processInBatches(GLOBAL.albums, tags);
 
   // build tag list
   const sortedTags = Array.from(tags).sort();
@@ -126,7 +144,7 @@ function setInitialFilterFromUrlParams() {
 
 function createEmbed(album) {
   const iframe = document.createElement("iframe");
-  iframe.style = `width: ${itemSize}px; height: ${itemSize}px;`;
+  iframe.style = `width: ${ITEM_SIZE}px; height: ${ITEM_SIZE}px;`;
   iframe.seamless = true;
 
   const baseHref = "https://bandcamp.com/EmbeddedPlayer";

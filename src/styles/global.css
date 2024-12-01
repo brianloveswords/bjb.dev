@@ -1,54 +1,54 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background: #222;
-        color: #eee;
-    }
-    a:link {
-        color: #44caf7;
-    }
-    a:visited {
-        color: rgb(242, 133, 215);
-    }
-    a:active {
-        color: rgb(192, 58, 44);
-    }
+  body {
+    background: #060606;
+    color: #e6e6e6;
+  }
+  a:link {
+    color: #44caf7;
+  }
+  a:visited {
+    color: rgb(242, 133, 215);
+  }
+  a:active {
+    color: rgb(192, 58, 44);
+  }
 }
 
 body {
-    max-width: 1024px;
-    font-size: 130%;
-    font-family: "Atkinson Hyperlegible";
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+  max-width: 1024px;
+  font-size: 130%;
+  font-family: "Atkinson Hyperlegible";
+  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 p {
-    line-height: 166%;
-    margin: 1.5em 0;
+  line-height: 166%;
+  margin: 1.5em 0;
 }
 
 p > code,
 a > code {
-    font-size: 110%;
+  font-size: 110%;
 }
 
 p > code {
-    background: #272822;
-    color: #f8f8f2;
-    padding: 0.1em 0.3em;
-    border-radius: 0.3em;
+  background: #272822;
+  color: #f8f8f2;
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
 }
 
 pre code[class*="language-"] {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 h1,
@@ -57,83 +57,91 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 120%;
+  line-height: 120%;
 }
 
 .highlight pre {
-    background: #272822;
-    padding: 1em;
-    max-width: 100%;
-    overflow-x: scroll;
-    border: 1px solid #555;
+  background: #272822;
+  padding: 1em;
+  max-width: 100%;
+  overflow-x: scroll;
+  border: 1px solid #555;
+}
+
+pre {
+  margin: 0;
+  padding: 1em;
 }
 
 ul {
-    padding-left: 1.5em;
+  padding-left: 1.5em;
 }
 
 .sixteen-nine {
-    aspect-ratio: 16 / 9;
-    height: 100%;
-    width: 100%;
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
 }
 
 li {
-    margin: 0.5em 0;
-    line-height: 125%;
+  margin: 0.5em 0;
+  line-height: 125%;
 }
 
 .error {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: red;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: red;
 }
 
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-        url("/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
-        url("/assets/fonts/Atkinson-Hyperlegible-Regular-102.woff") format("woff");
-    font-display: swap;
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Atkinson Hyperlegible";
+  src:
+    url("/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2")
+      format("woff2"),
+    url("/assets/fonts/Atkinson-Hyperlegible-Regular-102.woff") format("woff");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-        url("/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
-        url("/assets/fonts/Atkinson-Hyperlegible-Bold-102.woff") format("woff");
-    font-display: swap;
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Atkinson Hyperlegible";
+  src:
+    url("/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
+    url("/assets/fonts/Atkinson-Hyperlegible-Bold-102.woff") format("woff");
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-        url("/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2") format("woff2"),
-        url("/assets/fonts/Atkinson-Hyperlegible-Italic-102.woff") format("woff");
-    font-display: swap;
-    font-weight: normal;
-    font-style: italic;
+  font-family: "Atkinson Hyperlegible";
+  src:
+    url("/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2") format("woff2"),
+    url("/assets/fonts/Atkinson-Hyperlegible-Italic-102.woff") format("woff");
+  font-display: swap;
+  font-weight: normal;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-        url("/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2") format("woff2"),
-        url("/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff") format("woff");
-    font-display: swap;
-    font-weight: bold;
-    font-style: italic;
+  font-family: "Atkinson Hyperlegible";
+  src:
+    url("/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2")
+      format("woff2"),
+    url("/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff")
+      format("woff");
+  font-display: swap;
+  font-weight: bold;
+  font-style: italic;
 }
 
 sup {
-    display: inline-block;
-    padding-left: 0.2em;
+  display: inline-block;
+  padding-left: 0.2em;
 }
 
 summary {
-    cursor: pointer;
+  cursor: pointer;
 }
