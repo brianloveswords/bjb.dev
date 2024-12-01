@@ -6,7 +6,9 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt({ html: true });
 
 export async function GET(context) {
-  const posts = await getCollection("log");
+  const posts = (await getCollection("log")).filter(
+    (post) => post.data.unlisted !== true,
+  );
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
