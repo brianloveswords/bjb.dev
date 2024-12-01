@@ -8,10 +8,9 @@ const headerTitle = document.getElementById("header-item-title");
 const headerTags = document.getElementById("header-item-tags");
 const infoLastUpdated = document.getElementById("last-updated");
 
-const ITEM_SIZE = 200; //px
 const PAGE_SIZE = 500;
 
-function processAlbum(album, tags) {
+function renderAlbum(album, tags) {
   const cleanTags = album.tags.map((s) => s.trim().toLowerCase());
 
   for (const tag of cleanTags) {
@@ -56,20 +55,24 @@ function processAlbum(album, tags) {
   mainList.appendChild(container);
 }
 
-function processInBatches(remaining, tags) {
+function renderNextPage(remaining, tags) {
   if (remaining.length === 0) {
     return;
   }
 
   const current = remaining.slice(0, PAGE_SIZE);
   for (const album of current) {
-    processAlbum(album, tags);
+    renderAlbum(album, tags);
+  }
+
+  const nextPage = remaining.slice(PAGE_SIZE);
+  if (nextPage.length === 0) {
+    return;
   }
 
   setTimeout(() => {
-    const nextPage = remaining.slice(PAGE_SIZE);
     requestAnimationFrame(() => {
-      processInBatches(nextPage, tags);
+      renderNextPage(nextPage, tags);
     });
   }, 333);
 }
@@ -81,7 +84,7 @@ function main() {
   infoLastUpdated.textContent = new Date(GLOBAL.lastUpdated).toLocaleString();
 
   // build the main album list
-  processInBatches(GLOBAL.albums, tags);
+  renderNextPage(GLOBAL.albums, tags);
 
   // build tag list
   const sortedTags = Array.from(tags).sort();
