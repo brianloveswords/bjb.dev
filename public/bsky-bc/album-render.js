@@ -1,20 +1,10 @@
-const mainList = document.getElementById("main");
-const tagList = document.getElementById("tags");
-const tagFilter = document.getElementById("tag-filter");
-const tagFilterStyle = document.getElementById("tag-filter-style");
-const titleFilter = document.getElementById("title-filter");
-const titleFilterStyle = document.getElementById("title-filter-style");
-const headerTitle = document.getElementById("header-item-title");
-const headerTags = document.getElementById("header-item-tags");
-const infoLastUpdated = document.getElementById("last-updated");
-
 const PAGE_SIZE = 500;
 
-function renderAlbum(album, tags) {
+function renderAlbum(album, { allTags, container, headerTitle, headerTags }) {
   const cleanTags = album.tags.map((s) => s.trim().toLowerCase());
 
   for (const tag of cleanTags) {
-    tags.add(tag);
+    allTags.add(tag);
   }
 
   function showDetails() {
@@ -22,19 +12,19 @@ function renderAlbum(album, tags) {
     headerTags.textContent = cleanTags.join(", ");
   }
 
-  const container = document.createElement("a");
-  container.href = album.uri;
-  container.className = "item";
-  container.dataset.filterTags = cleanTags.map((s) => `[${s}]`).join(" ");
-  container.dataset.filterTitle = album.title.toLowerCase();
-  container.addEventListener("focus", showDetails);
-  container.addEventListener("mouseover", showDetails);
+  const item = document.createElement("a");
+  item.href = album.uri;
+  item.className = "item";
+  item.dataset.filterTags = cleanTags.map((s) => `[${s}]`).join(" ");
+  item.dataset.filterTitle = album.title.toLowerCase();
+  item.addEventListener("focus", showDetails);
+  item.addEventListener("mouseover", showDetails);
 
   const img = document.createElement("img");
   img.src = album.imageHref;
   img.loading = "lazy";
   img.className = "artwork";
-  container.appendChild(img);
+  item.appendChild(img);
 
   const embed = createEmbed(album);
   embed.addEventListener("focus", showDetails);
@@ -47,22 +37,22 @@ function renderAlbum(album, tags) {
       return;
     }
 
-    container.replaceChild(embed, img);
+    item.replaceChild(embed, img);
   }
 
-  container.addEventListener("click", replacer, { once: true });
+  item.addEventListener("click", replacer, { once: true });
 
-  mainList.appendChild(container);
+  container.appendChild(item);
 }
 
-function renderNextPage(remaining, tags) {
+function renderNextPage(remaining, config) {
   if (remaining.length === 0) {
     return;
   }
 
   const current = remaining.slice(0, PAGE_SIZE);
   for (const album of current) {
-    renderAlbum(album, tags);
+    renderAlbum(album, config);
   }
 
   const nextPage = remaining.slice(PAGE_SIZE);
@@ -72,22 +62,37 @@ function renderNextPage(remaining, tags) {
 
   setTimeout(() => {
     requestAnimationFrame(() => {
-      renderNextPage(nextPage, tags);
+      renderNextPage(nextPage, config);
     });
   }, 333);
 }
 
 function main() {
-  const tags = new Set();
+  const mainList = document.getElementById("main");
+  const tagList = document.getElementById("tags");
+  const tagFilter = document.getElementById("tag-filter");
+  const tagFilterStyle = document.getElementById("tag-filter-style");
+  const titleFilter = document.getElementById("title-filter");
+  const titleFilterStyle = document.getElementById("title-filter-style");
+  const headerTitle = document.getElementById("header-item-title");
+  const headerTags = document.getElementById("header-item-tags");
+  const infoLastUpdated = document.getElementById("last-updated");
+
+  const allTags = new Set();
 
   // update lateUpdated
   infoLastUpdated.textContent = new Date(GLOBAL.lastUpdated).toLocaleString();
 
   // build the main album list
-  renderNextPage(GLOBAL.albums, tags);
+  renderNextPage(GLOBAL.albums, {
+    allTags,
+    container: mainList,
+    headerTitle,
+    headerTags,
+  });
 
   // build tag list
-  const sortedTags = Array.from(tags).sort();
+  const sortedTags = Array.from(allTags).sort();
   for (const tag of sortedTags) {
     const option = document.createElement("option");
     option.value = tag;
@@ -113,7 +118,7 @@ function main() {
     tagFilterStyle.textContent = css;
   });
 
-  setInitialFilterFromUrlParams();
+  setInitialFilterFromUrlParams(tagFilter);
 
   // enable the title filter
   titleFilter.addEventListener("input", (e) => {
@@ -135,14 +140,17 @@ function main() {
   });
 }
 
-function setInitialFilterFromUrlParams() {
+function setInitialFilterFromUrlParams(input) {
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
   const tags = params.get("tags");
-  if (tags) {
-    tagFilter.value = tags;
-    tagFilter.dispatchEvent(new Event("input"));
+
+  if (!tags) {
+    return;
   }
+
+  input.value = tags;
+  input.dispatchEvent(new Event("input"));
 }
 
 function createEmbed(album) {
