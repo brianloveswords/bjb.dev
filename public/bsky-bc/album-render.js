@@ -34,7 +34,7 @@ function processAlbum(album, tags) {
   const img = document.createElement("img");
   img.src = album.imageHref;
   img.loading = "lazy";
-  img.style = `width: ${ITEM_SIZE}px; height: ${ITEM_SIZE}px;`;
+  img.className = "artwork";
   container.appendChild(img);
 
   const embed = createEmbed(album);
@@ -47,11 +47,11 @@ function processAlbum(album, tags) {
       window.open(album.uri, "_blank");
       return;
     }
-    container.removeEventListener("click", replacer);
+
     container.replaceChild(embed, img);
   }
 
-  container.addEventListener("click", replacer);
+  container.addEventListener("click", replacer, { once: true });
 
   mainList.appendChild(container);
 }
@@ -62,14 +62,14 @@ function processInBatches(remaining, tags) {
   }
 
   const current = remaining.slice(0, PAGE_SIZE);
-  const next = remaining.slice(PAGE_SIZE);
   for (const album of current) {
     processAlbum(album, tags);
   }
 
   setTimeout(() => {
+    const nextPage = remaining.slice(PAGE_SIZE);
     requestAnimationFrame(() => {
-      processInBatches(next, tags);
+      processInBatches(nextPage, tags);
     });
   }, 333);
 }
@@ -144,7 +144,7 @@ function setInitialFilterFromUrlParams() {
 
 function createEmbed(album) {
   const iframe = document.createElement("iframe");
-  iframe.style = `width: ${ITEM_SIZE}px; height: ${ITEM_SIZE}px;`;
+  iframe.className = "embed";
   iframe.seamless = true;
 
   const baseHref = "https://bandcamp.com/EmbeddedPlayer";
