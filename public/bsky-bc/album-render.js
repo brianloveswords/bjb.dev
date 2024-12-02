@@ -45,7 +45,7 @@ function renderAlbum(album, { allTags, container, headerTitle, headerTags }) {
   container.appendChild(item);
 }
 
-function renderNextPage(remaining, config) {
+function renderAlbums(remaining, config) {
   if (remaining.length === 0) {
     return;
   }
@@ -62,7 +62,7 @@ function renderNextPage(remaining, config) {
 
   setTimeout(() => {
     requestAnimationFrame(() => {
-      renderNextPage(nextPage, config);
+      renderAlbums(nextPage, config);
     });
   }, 333);
 }
@@ -80,70 +80,86 @@ function main() {
 
   const allTags = new Set();
 
-  // update lateUpdated
-  infoLastUpdated.textContent = new Date(GLOBAL.lastUpdated).toLocaleString();
-
-  // build the main album list
-  renderNextPage(GLOBAL.albums, {
+  setLastUpdated(GLOBAL.lastUpdated, infoLastUpdated);
+  createAutocomplete(allTags, { tagList });
+  enableFilters({ tagFilter, tagFilterStyle, titleFilter, titleFilterStyle });
+  renderAlbums(GLOBAL.albums, {
     allTags,
     container: mainList,
     headerTitle,
     headerTags,
   });
+}
 
-  // build tag list
+function enableFilters({
+  tagFilter,
+  tagFilterStyle,
+  titleFilter,
+  titleFilterStyle,
+}) {
+  const filters = { tags: tagFilter, title: titleFilter };
+  const styles = { tags: tagFilterStyle, title: titleFilterStyle };
+
+  for (const key of Object.keys(filters)) {
+    const filter = filters[key];
+    filter.addEventListener("input", (e) => {
+      const value = e.target.value.trim();
+      styles[key].textContent = generateFilterStyle(key, value);
+    });
+    filter.addEventListener("blur", (e) => {
+      const value = e.target.value.trim();
+      setQueryParam(key, value);
+    });
+    filter.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        e.target.blur();
+      }
+    });
+    setInitialFilterFromUrlParams(key, filter);
+  }
+}
+
+function setLastUpdated(date, element) {
+  element.textContent = new Date(date).toLocaleString();
+}
+
+function createAutocomplete(allTags, { tagList }) {
   const sortedTags = Array.from(allTags).sort();
   for (const tag of sortedTags) {
     const option = document.createElement("option");
     option.value = tag;
     tagList.appendChild(option);
   }
-
-  // enable the tag filter
-  tagFilter.addEventListener("input", (e) => {
-    const value = e.target.value.trim();
-
-    if (!value) {
-      tagFilterStyle.textContent = "";
-      return;
-    }
-
-    const selectorBody = value
-      .split(",")
-      .map((s) => `[data-filter-tags*="${s.trim()}"]`)
-      .join("");
-    const selector = `.item:not(${selectorBody})`;
-    const content = `display:none;`;
-    const css = `${selector} { ${content} }`;
-    tagFilterStyle.textContent = css;
-  });
-
-  setInitialFilterFromUrlParams(tagFilter);
-
-  // enable the title filter
-  titleFilter.addEventListener("input", (e) => {
-    const value = e.target.value.trim();
-
-    if (!value) {
-      titleFilterStyle.textContent = "";
-      return;
-    }
-
-    const selectorBody = value
-      .split(/\s+/)
-      .map((s) => `[data-filter-title*="${s.trim()}"]`)
-      .join("");
-    const selector = `.item:not(${selectorBody})`;
-    const content = `display:none;`;
-    const css = `${selector} { ${content} }`;
-    titleFilterStyle.textContent = css;
-  });
 }
 
-function setInitialFilterFromUrlParams(input) {
+function generateFilterStyle(key, value) {
+  if (!value) {
+    return "";
+  }
+  const selectorBody = value
+    .split(/\s+/)
+    .map((s) => `[data-filter-${key}*="${s.trim()}"]`)
+    .join("");
+  const selector = `.item:not(${selectorBody})`;
+  const content = `display:none;`;
+  return `${selector} { ${content} }`;
+}
+
+function setQueryParam(key, value) {
+  const url = new URL(window.location);
+  if (!value) {
+    url.searchParams.delete(key);
+  } else {
+    url.searchParams.set(key, value);
+  }
+  window.history.replaceState(null, "", url.toString());
+}
+
+function setInitialFilterFromUrlParams(key, input) {
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
-  const tags = params.get("tags");
+  const tags = params.get(key);
 
   if (!tags) {
     return;
