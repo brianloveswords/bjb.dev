@@ -81,7 +81,6 @@ function main() {
   const allTags = new Set();
 
   setLastUpdated(GLOBAL.lastUpdated, infoLastUpdated);
-  createAutocomplete(allTags, { tagList });
   enableFilters({ tagFilter, tagFilterStyle, titleFilter, titleFilterStyle });
   renderAlbums(GLOBAL.albums, {
     allTags,
@@ -89,6 +88,7 @@ function main() {
     headerTitle,
     headerTags,
   });
+  createAutocomplete(allTags, { tagList });
 }
 
 function enableFilters({

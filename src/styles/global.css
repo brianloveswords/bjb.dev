@@ -94,6 +94,15 @@ li {
   text-decoration-color: red;
 }
 
+.footnotes {
+  border-top: 1px solid #666;
+  margin-top: 1em;
+}
+
+#footnote-label {
+  text-transform: lowercase;
+}
+
 @font-face {
   font-family: "Atkinson Hyperlegible";
   src:
