@@ -1,4 +1,5 @@
-const PAGE_SIZE = 500;
+const PAGE_SIZE = 666;
+const PAGE_DELAY = 111;
 
 function renderAlbum(album, { allTags, container, headerTitle, headerTags }) {
   const cleanTags = album.tags.map((s) => s.trim().toLowerCase());
@@ -45,11 +46,7 @@ function renderAlbum(album, { allTags, container, headerTitle, headerTags }) {
   container.appendChild(item);
 }
 
-function renderAlbums(remaining, config) {
-  if (remaining.length === 0) {
-    return;
-  }
-
+function renderAlbums(remaining, config, doneCallback) {
   const current = remaining.slice(0, PAGE_SIZE);
   for (const album of current) {
     renderAlbum(album, config);
@@ -57,14 +54,15 @@ function renderAlbums(remaining, config) {
 
   const nextPage = remaining.slice(PAGE_SIZE);
   if (nextPage.length === 0) {
+    doneCallback();
     return;
   }
 
   setTimeout(() => {
     requestAnimationFrame(() => {
-      renderAlbums(nextPage, config);
+      renderAlbums(nextPage, config, doneCallback);
     });
-  }, 333);
+  }, PAGE_DELAY);
 }
 
 function main() {
@@ -77,17 +75,28 @@ function main() {
   const headerTitle = document.getElementById("header-item-title");
   const headerTags = document.getElementById("header-item-tags");
   const infoLastUpdated = document.getElementById("last-updated");
+  const loadingIndicator = document.getElementById("loading-indicator");
 
   const allTags = new Set();
 
   setLastUpdated(GLOBAL.lastUpdated, infoLastUpdated);
   enableFilters({ tagFilter, tagFilterStyle, titleFilter, titleFilterStyle });
-  renderAlbums(GLOBAL.albums, {
-    allTags,
-    container: mainList,
-    headerTitle,
-    headerTags,
-  });
+  renderAlbums(
+    GLOBAL.albums,
+    {
+      allTags,
+      container: mainList,
+      headerTitle,
+      headerTags,
+    },
+    () => {
+      loadingIndicator.addEventListener(
+        "animationiteration",
+        () => loadingIndicator.remove(),
+        { once: true },
+      );
+    },
+  );
   createAutocomplete(allTags, { tagList });
 }
 

@@ -10,19 +10,24 @@
         background: #000;
         color: #eee;
       }
+
       summary {
         cursor: pointer;
       }
+
       .page-title {
         margin: 0;
       }
+
       h1 aside {
         font-size: 0.8rem;
       }
+
       a {
         color: #3d83f6;
         text-decoration: none;
       }
+
       header {
         position: sticky;
         top: 0;
@@ -30,19 +35,45 @@
         background: rgba(0, 0, 0, 0.75);
         padding: 0.01rem 0em 0.7rem;
       }
+
       h3 {
         font-size: 0.75rem;
       }
+
       .item {
         display: inline-block;
       }
+
       .item iframe {
         border: 0;
       }
+
       .embed,
       .artwork {
         width: 200px;
         height: 200px;
+      }
+
+      #loading-indicator {
+        background: none;
+        color: #fff;
+        opacity: 0;
+        animation: blink linear 1s infinite alternate;
+      }
+      #loading-indicator::after {
+        content: "*";
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
       }
     </style>
     <style id="tag-filter-style"></style>
@@ -50,7 +81,7 @@
   </head>
   <body>
     <h1 class="page-title">
-      bluesky bandcamp
+      bluesky bandcamp <mark id="loading-indicator"></mark>
       <aside class="page-about">
         by
         <a target="_blank" href="https://bsky.app/profile/brianloveswords.com">
