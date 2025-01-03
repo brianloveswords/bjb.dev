@@ -1,8 +1,8 @@
 ---
 title: keeping a personal archive
 description: wayback machine for the stuff I read
-unlisted: false
 pubDate: 2025-01-01
+unlisted: false
 ---
 ## the internet rots
 
@@ -14,7 +14,7 @@ massive shoutout to [Internet Archive](https://archive.org/) for trying to solve
 
 ## Zotero as my personal wayback machine
 
-I mentioned Zotero in the past [talking about how I read papers](20220226-how-i-read-papers), but I also I use it to archive much of what I read on the internet!
+I mentioned Zotero in the past [talking about how I read papers](/log/20220226-how-i-read-papers), but I also I use it to archive much of what I read on the internet!
 
 I have the [Zotero](https://www.zotero.org/) desktop app and [Zotero Connector](https://www.zotero.org/download/connectors) browser extension. I bound the browser extension hotkey to `⌥Z`. I don't archive _everything_ I read, but I err on the side of archiving if what I'm reading fires off enough of the good neurons.
 
