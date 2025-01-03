@@ -57,23 +57,6 @@ a:focus {
     background: #060606;
     color: #e6e6e6;
   }
-
-  /* a:link {
-    color: rgb(68, 202, 247);
-    text-decoration-color: rgba(68, 202, 247, 0.333);
-    transition: 200ms text-decoration-color;
-  }
-  a:link:hover {
-    text-decoration-color: rgba(68, 202, 247, 0.667);
-  }
-  a:visited {
-    color: rgb(242, 133, 215);
-  }
-  a:active,
-  a:focus {
-    color: rgb(192, 58, 44);
-    text-decoration-color: rgb(192, 58, 44, 0.667);
-  } */
 }
 
 body {
