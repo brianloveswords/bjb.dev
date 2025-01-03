@@ -2,19 +2,60 @@
   box-sizing: border-box;
 }
 
+:root {
+  --light: 50%;
+  --hue: 200;
+  --focus-hue: 350;
+  --visited-hue: 315;
+
+  --link-color: hsl(var(--hue) 50% var(--light) / 1);
+  --link-underline-color: hsl(var(--hue) 50% var(--light) / 0.2);
+  --link-underline-hover-color: hsl(var(--hue) 100% var(--light) / 0.667);
+
+  --link-visited-color: hsl(var(--visited-hue) 50% var(--light) / 1);
+  --link-visited-hover-underline-color: hsl(
+    var(--visited-hue) 75% var(--light) / 0.667
+  );
+  --link-focus-color: hsl(var(--focus-hue) 50% var(--light) / 1);
+}
+
+a:link {
+  color: var(--link-color);
+  text-decoration-skip-ink: none;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--link-underline-color);
+  transition: 250ms text-decoration-color;
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration-skip-ink: initial;
+  text-decoration-style: initial;
+}
+a:hover {
+  text-decoration-color: var(--link-underline-hover-color);
+}
+a:visited {
+  color: var(--link-visited-color);
+}
+a:visited:hover {
+  text-decoration-color: var(--link-visited-hover-underline-color);
+  text-decoration-thickness: 200%;
+}
+a:active,
+a:focus {
+  color: var(--link-focus-color);
+  text-decoration-color: var(--link-focus-underline-color);
+}
+
 @media (prefers-color-scheme: dark) {
+  :root {
+    --light: 66%;
+  }
+
   body {
     background: #060606;
     color: #e6e6e6;
-  }
-  a:link {
-    color: #44caf7;
-  }
-  a:visited {
-    color: rgb(242, 133, 215);
-  }
-  a:active {
-    color: rgb(192, 58, 44);
   }
 }
 
