@@ -24,7 +24,7 @@ node_modules : package-lock.json
 ##
 
 # publish the site to the internet
-publish : cloud/sync cdn/cache/purge
+publish : cloud/sync
 
 
 # run the development server
