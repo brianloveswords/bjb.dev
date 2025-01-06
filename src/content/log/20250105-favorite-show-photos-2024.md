@@ -67,7 +67,7 @@ have fun learning.
 <em>The Armed</em>
 
   <img loading=lazy src="/static/20250105/2024-06-11T201646_01.7a46326c20b61339bba243610f9151a0.avif" width="1516" height="2048" style="background: #4CEF3C;">
-  <img loading=lazy src="/static/20250105/2024-06-12T211516_01.f66b728bb002d4c6eb54931d3226c7ff.avif" width="1542" height="2048" style="background: #374722;">
+  <img loading=lazy src="/static/20250105/2024-06-12T211516_01.b1957834a49aad392af8ac8a96c2ca91.avif" width="1542" height="2048" style="background: #374722;">
 
 <em>Empire State Bastard</em>
 
