@@ -6,11 +6,13 @@ import FormattedDate from '../components/FormattedDate.astro';
 type Props = CollectionEntry<'log'>['data'];
 
 const { title, description, pubDate } = Astro.props;
+let image = Astro.props.image ?? '/assets/brian-kittens.jpg';
+
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={image}/>
 		<style>
         h1 {
             font-size: 2.5em;
