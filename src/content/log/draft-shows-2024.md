@@ -1,0 +1,757 @@
+---
+title: shows i went to in 2024
+description: and some that i missed
+pubDate: 2025-01-01
+unlisted: true
+---
+
+<!--
+
+- style the bullet points
+- either remove or no-break the sups
+    - case for using astro components?
+
+-->
+
+## summary
+
+- went to **39** shows in 2024
+- counting The Armed, **Patrick Shiroishi** performed at **10** of those shows
+  - he played **98** shows last year
+    - so I had about **10%** attendance rate
+- had to miss at least **4** shows
+  - there were probably others but these are the ones that I lament the most
+    - **Foxing** in Manhattan, NY
+    - **The Blood Brothers • Uniform** in Brooklyn, NY
+    - **The Dismemberment Plan** in Washington, DC
+    - **Chat Pile • Agriculture** in Detroit, MI
+- on median, i went to a show every **5** days (average every **8.<span style="text-decoration: overline">3</span>** days)
+  - saw at least one show every month
+  - longest stretch between shows was **42 days**
+    - had bunch of work travel followed by illness
+- saw The Armed play with **3** different drummers
+  - **Urian Hackney** in spring and at Outline
+  - **Nick Yacshyn** in Europe
+  - **Billy Rymer** at No Rest Fest
+- ⭐'d some especially meaningful shows
+  - not great at “reviewing” shows
+    - if i can feel the performers putting in the energy I'm happy
+    - didn't see a bad show this year
+
+## <time>01-27</time> Hot Rod Circuit<sup>2</sup> • Punchline<sup>1</sup> • Sharkswimmer<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-01-27-hot-rod-circuit.avif">
+
+### venue
+
+- _Le Poisson Rouge_ | Manhattan, NY
+
+### notes
+
+- what a throwback show!
+- been 20+ years since last saw **Hot Rod Circuit**
+  - last time might have been with The Get Up Kids who I see later in the year!
+
+## <time>02-18</time> SUMAC<sup>1</sup> • Ana Mendoza<sup>1</sup> • Chained to the Bottom of the Ocean<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-02-18-sumac.avif">
+
+### venue
+
+- _TV Eye_ | Queens, NY
+
+### notes
+
+- supposed to be at _Saint Vitus_ but it got shut down the night before (RIP)
+  - moved to a matinee show at _TV Eye_, started at ~2:00pm
+- was a little late so I only unfortunately caught just the last song of **CTTBOTO**
+  - glad I got to see them again later in the year!
+- love **SUMAC**, everyone in this band rules
+  - saw Brian play with **Botch** and last year
+  - saw Nick play with **The Armed** last year
+  - saw Aaron play with **Isis** (the band) in 2004
+    - with **These Arms Are Snakes**
+      - …which was how he met Brian, who used to play bass for them!
+  - ended up getting tattooed by Aaron over the summer!
+  - [The Healer](https://sumac.bandcamp.com/album/the-healer) one of the best albums released this year
+
+## <time>03-07</time> ⭐ mclusky<sup>1</sup> • Pure Adult<sup>1</sup> • The Martha's Vineyard Ferries<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-03-07-mclusky.avif">
+
+### venue
+
+- _Warsaw_ | Brooklyn, NY
+
+### notes
+
+- finally got to see **mclusky** after 20 years of listening!
+  - they were so happy to be in Brooklyn, tears might have been shed
+    - there is a whole cursed history of them trying to get to New York
+      - even this time: they made it, but airline lost their pedals!
+  - Damien on bass, incredible performer
+
+## <time>03-26</time> The Armed<sup>4</sup> • The HIRS Collective<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-03-26-the-armed.avif">
+
+### venue
+
+- _Spirit Hall_ | Pittsburgh, PA
+
+### notes
+
+- i'm in the bottom left of the show poster
+  - this photo was taken at the 2023 St. Andrews show in Detroit
+    - which was the dress rehearsal show for [Live at the Metro](https://www.youtube.com/watch?v=5X2Qp4_vq3U)
+- made some new friends
+  - recognized them from aforementioned Detroit show
+- first time seeing **HIRS**, absolutely wild performance
+  - loved Kenny, Randall, and Tony from **The Armed** joined Jenna and Jake for the last song
+
+## <time>03-27</time> ⭐ The Armed<sup>5</sup> • The HIRS Collective<sup>2</sup> • Kipp Stone<sup>2</sup> • Honeybee<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-03-27-the-armed.avif">
+
+### venue
+
+- _Mahall's_ | Cleveland, OH
+
+### notes
+
+- first time I saw **Kipp Stone** was at the St Andrews show that the show poster photo was taken at
+- new pals from the Pittsburgh show also came to this show
+- convinced my pal from work to also come
+  - blew his mind
+- Jenna from **HIRS** dragging out her amp to stand on to sing **The Armed**'s closer song Big Shell
+- such a wonderfully chaotic show
+
+## <time>03-31</time> Sleepwell<sup>1</sup> • Holiem<sup>1</sup> • Glimmer<sup>1</sup> • Cohort B<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-03-31-sleepwell.avif">
+
+### venue
+
+- _Mercury Lounge_ | Manhattan, NY
+
+### notes
+
+- went to see my pals **Glimmer** but the whole lineup was great!
+- in particular **Cohort B**, looking forward to catching them more
+- **Sleepwell** played with absolutely zero pedals, just plugged straight into amps, distortion through driving them hard, it ruled
+
+## <time>04-13</time> Wendy Eisenberg<sup>1</sup>, Caroline Davis<sup>1</sup> • Patrick Shiroishi<sup>1</sup>, Che Chen<sup>1</sup>, Lesley Mok<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-04-13-eisenberg-davis.avif">
+
+### venue
+
+- _Property is Theft_ | Brooklyn, NY
+
+### notes
+
+- first of two shows that night
+- been a while since I'd been to a jazz improv show, Patrick's set was rad as hell
+- seen Wendy in **Editrix**, this material was fantastic
+  - loved that she had a music stand in front of her and at the end turned it around and it just said "therapy in session"
+
+## <time>04-13</time> Agriculture<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-04-13-agriculture.avif">
+
+### venue
+
+- _TV Eye_ | Queens, NY
+
+### notes
+
+- second show of the night!
+- **Agriculture**'s first show in NYC
+- loved their set, such a joyful experience
+- got to pass along a "hello!" from Patrick
+  - they're all from LA and he played on their record
+
+## <time>04-16</time> Chris Williams<sup>1</sup>, Kalia Vandever<sup>1</sup>, Patrick Shiroishi<sup>2</sup>
+
+<img loading=lazy src="/assets/2024-04-16-chris-williams.avif">
+
+### venue
+
+- _Roulette_ | Brooklyn, NY
+
+### notes
+
+- [watch it](https://roulette.org/event/chris-williams-odu-vibration-ii/)
+- should go to Roulette more often!
+- great noises
+
+## <time>04-18</time> Joanna Mattrey<sup>1</sup>, gabby fluke-mogul<sup>1</sup>, Patrick Shiroishi<sup>3</sup>
+
+<img loading=lazy src="/assets/2024-04-18-joanna-mattrey.avif">
+
+### venue
+
+- _Roulette_ | Brooklyn, NY
+
+### notes
+
+- [watch it](https://roulette.org/event/joanna-mattrey-battle-ready/)
+- awesome to see 3 very different performances from Patrick in one week!
+- lot more stage performance in this one, rad as heck
+
+## <time>04-19</time> ⭐ METZ<sup>1</sup> • Gouge Away<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-04-19-metz.avif">
+
+### venue
+
+- _Bowery Ballroom_ | Manhattan, NY
+
+### notes
+
+- love a two band bill, and both their new records are excellent
+- really glad I got to see **METZ** before their indefinite hiatus
+  - got an unplanned encore!
+- hung out with a new pal and ran into an old pal
+
+## <time>04-24</time> Black Country, New Road<sup>1</sup> • Horsegirl<sup>1</sup> • Camera Picture<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-04-24-bcnr.avif">
+
+### venue
+
+- _Brooklyn Paramount_ | Brooklyn, NY
+
+### notes
+
+- first time at Brooklyn Paramount
+  - it is extra tiring to stand on the sloped part of the floor all night!
+  - lights kinda blasting us in the face the whole time
+- **BCBR** thanked us for being quiet, "unlike Boston"
+
+## <time>05-10</time> The World is a Beautiful Place and I am No Longer Afraid to Die<sup>1</sup> • Chained to the Bottom of the Ocean<sup>2</sup> • Burr<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-05-10-twiabp.avif">
+
+### venue
+
+- _TV Eye_ | Queens, NY
+
+### notes
+
+- wild I'm pretty sure this was my first time seeing **TWIABP**
+  - I went to college with a few of the old members and the drummer is from my hometown
+  - then again I saw a lot of shows before I quit drinking that I straight up don't remember so maybe I did see them!
+- glad I made up for missing **CTTBOTO** earlier in the year
+
+## <time>05-12</time> ⭐ Chat Pile<sup>1</sup> • portrayal of guilt<sup>2</sup> • Nightosphere<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-05-12-chat-pile.avif">
+
+### venue
+
+- _The Grey Eagle_ | Asheville, NC
+
+### notes
+
+- banging lineup
+  - **portrayal of guilt** and **Nightosphere** released some of my favorite records in 2023
+  - **Chat Pile** released one of the best records of 2022
+- didn't get kicked in the head unlike [the last time I saw portrayal of guilt](/log/20240120-portryal-of-guilt-saint-vitus-november-2023)!
+- hung out with one of my oldest pals who I hadn't seen in a while and brought him to the show
+- **Nightosphere** offered to guest list me when I said I was flying out for it 🥹
+
+## <time>06-05</time> ⭐ melt-banana<sup>1</sup> • The Flying Luttenbachers<sup>1</sup> • Tomato Flower<sup>1</sup> • babybaby_explores<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-06-05-melt-banana.avif">
+
+### venue
+
+- _The Hall at Elsewhere_ | Brooklyn, NY
+
+### notes
+
+- first time seeing melt-banana after listening to them forever!
+- The Flying Luttenbachers were nuts
+- super fun lineup overall
+
+## <time>06-10</time> Goat Girl<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-06-10-goat-girl.avif">
+
+### venue
+
+- _Brudnell Social Club_ | Leeds, UK
+
+### notes
+
+- never listened to Goat Girl, went to this show on a total whim
+  - had nothing better to do and I wanted to check out the venue before The Armed the next night
+- it was a good show!
+- great pies at Brudnell
+- the room is interesting, feels a bit more like a rec room than a venue
+  - drop ceilings!
+
+## <time>06-11</time> ⭐ The Armed<sup>6</sup> • Bathing Suits<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-06-11-the-armed.avif">
+
+### venue
+
+- _Brudnell Social Club_ | Leeds, UK
+
+### notes
+
+- more delicious pies
+- excellent hangs with some new friends and internet pals
+- first time seeing **The Armed** play _Music Becomes a Skull_
+- first time seeing Max Frank (snax) on guitar
+- reminded me of the VFW, American Legion hardcore shows I used to go to as a kid
+  - but like if someone dragged a bonkers lighting rig in there
+  - Randall punched through the ceiling and ripped down a tile while crowdsurfing
+
+## <time>06-12</time> The Armed<sup>7</sup> • Empire State Bastard<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-06-12-the-armed.avif">
+
+### venue
+
+- _HERE at Outernet_ | London, UK
+
+### notes
+
+- state-of-the-art venue with a massive video wall behind them
+  - incredible contrast to the night before
+- **Empire State Bastard** was new to me and excellent
+- near-⭐ except for Leeds being the night before and one of the best shows I've ever to
+
+## <time>06-15</time> Gina Volpe<sup>1</sup> • Leathered<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-06-15-gina-volpe.avif">
+
+### venue
+
+- _The Sultan Room_ | Brooklyn, NY
+
+### notes
+
+- first time at Sultan Room!
+- went to see my pal Amanda who was doing double duty in both bands
+- got to hang with a bunch of friends I hadn't seen in a while!
+
+## <time>06-21</time> The Dillinger Escape Plan<sup>2</sup> • Car Bomb<sup>1</sup> • Candy<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-06-21-dep.avif">
+
+### venue
+
+- _Brooklyn Paramount_ | Brooklyn, NY
+
+### notes
+
+- last time I saw **The Dillinger Escape Plan** was at Middle East Downstairs in the early 2000s
+  - **Horse the Band** opening, still one of the wall-to-wall wildest crowds I've seen
+- loved the visuals/lighting on the drum kit
+- fun to see Dimitri breathing fire
+
+## <time>06-22</time> ⭐ Outline Festival
+
+<img loading=lazy src="/assets/2024-06-22-outline.avif">
+
+### lineup
+
+- The Armed<sup>8</sup>
+- Chat Pile<sup>2</sup>
+- King Woman<sup>1</sup>
+- Ragana<sup>1</sup>
+- Cloakroom<sup>1</sup>
+- _showed up late, missed Couch Slut<sup>0</sup>_
+
+### venue
+
+- _Knockdown Center_ | Brooklyn, NY
+
+### notes
+
+- top-to-bottom every band on this bill ruled
+- met up with some old friends and made new friends
+  - including some pals who stayed with me from out of town for the show
+- got a couple of people to come out and see The Armed for the first time
+- up until the thunderstorm the show was extremely well paced
+  - two stages but no overlapping sets
+    - thunderstorm pushed King Woman to the inside stage
+- first time seeing Meg O'Neil with The Armed
+  - also double duty with King Woman!
+
+## <time>07-05</time> ⭐ Scarcity<sup>1</sup> • Crippling Alcoholism<sup>1</sup> • THiN<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-07-05-scarcity.avif">
+
+### venue
+
+- _trans-pecos_ | Queens, NY
+
+### notes
+
+- release show for [The Promise of Rain](https://scarcity-nyc.bandcamp.com/album/the-promise-of-rain)
+- **Crippling Alcoholism** and **THiN** both new to me, great performances
+- end of the set, drummer from **THiN** threw some cymbals on the ground and writhed around on them, pretty sick
+
+## <time>07-20</time> Halloween<sup>1</sup> • Like a Doll<sup>1</sup> • Bedridden<sup>1</sup> • Sex Week<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-07-20-halloween.avif">
+
+### venue
+
+- _trans-pecos_ | Queens, NY
+
+### notes
+
+- went to this on a whim, didn't know anyone playing!
+- **Sex Week** was fun to watch, always love some good megaphone use
+- great bassist in **Bedridden**
+
+## <time>07-25</time> Model/Actriz<sup>2</sup> • Water From Your Eyes<sup>1</sup> • Kassie Krut<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-07-25-boat-show.avif">
+
+### venue
+
+- _on a boat in the hudson river_ | Manhattan, NY
+
+### notes
+
+- spouse came along!
+  - she enjoys boats enough that she went in not caring what music was
+    - ended up really liking **Water From your Eyes**!
+  - i do not like boats at all but wanted to see this lineup bad enough I would tolerate
+- hadn't heard **Kassie Krut** before, loved them
+- Cole from **Model/Actriz** dressed like a pirate
+- M/A covered [That's Not My Name](https://www.youtube.com/watch?v=v1c2OfAzDTI)
+- shocked it ended **right** on time
+  - we returned to dock within minutes of M/A's set ending
+
+## <time>08-01</time> ⭐ Couch Slut<sup>1</sup> • Ragana<sup>2</sup> • Sunrot<sup>1</sup> • Channel Vessel<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-08-01-couch-slut.avif">
+
+### venue
+
+- _trans-pecos_ | Brooklyn, NY
+
+### notes
+
+- **Channel Vessel** was new to me, excellent performance
+- love **Sunrot** brought someone from [Queer Fight School](https://www.instagram.com/queerfightschool/?hl=en), gave the mic to talk about the work they're doing and gave space at the merch table
+  - also the set was incredible, chills thinking about it
+- great seeing **Ragana** right up close in a smaller setting, their set was powerful
+- **Couch Slut** put on the most intense performance I've ever seen, really glad I got to see them after missing them at Outline
+
+## <time>08-03</time> boyscoutmarie<sup>1</sup> • Wiring<sup>1</sup> • Cohort B<sup>2</sup>
+
+<img loading=lazy src="/assets/2024-08-03-boyscoutmarie.avif">
+
+### venue
+
+- _mudhouse_ | Brooklyn, NY
+
+### notes
+
+- first house show in a _long_ time!
+- **Cohort B** was even better than the first time I saw them
+- **boyscoutmarie** was so fun!!
+  - love some guitar/bass swapping
+  - drummer is a beast
+  - Staci's voice is so distinct
+
+## <time>08-10</time> Newfound Interest in Connecticut<sup>1</sup> • Common Sage<sup>1</sup> • Fake Pollocks<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-08-10-newfound-interest.avif">
+
+### venue
+
+- _Baby's All Right_ | Brooklyn, NY
+
+### notes
+
+- **Newfound Interest in Connecticut** played much looser and chaotically than I expected!
+  - kinda felt like the show was gonna fall of the rails at any moment, it was fun
+  - also, first listened because of their name
+    - I'm from Connecticut, cannot fathom why someone might be newly interested
+  - Staci from **boyscoutmarie** was there, got on stage during an invited audience participation moment!
+
+## <time>08-29</time> Grave Animosity<sup>1</sup> • Blind Equation<sup>1</sup> • Snow Ellet<sup>1</sup> • Afraid of Crushes<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-08-29-grave-animosity.avif">
+
+### venue
+
+- _Beat Kitchen_ | Chicago, IL
+
+### notes
+
+- Chicago for work, asked a local friend about shows and she suggested this one
+- **Afraid of Crushes** first ever show, fun seeing that "first ever show" energy
+- someone brought a bunch of different Sonic plushies (Sonic, Tails, Shadow, etc.) and gave them to bands as they were playing 🥹
+- **Blind Equation** was the only band I knew going in, great set
+
+## <time>08-30</time> ⭐ Uniform<sup>1</sup> • Poison Ruïn<sup>1</sup> • LEYA<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-08-30-uniform.avif">
+
+### venue
+
+- _Bowery Ballroom_ | Manhattan, NY
+
+### notes
+
+- release show for [American Standard](https://unifuckingform.bandcamp.com/album/american-standard)
+- chatted with Lex from **Sunrot**, he's great
+- **LEYA** was incredible, harp & violin duo new to me
+- **Uniform** absolutely blew me away
+  - didn't expect vocalist to be so physically expressive
+  - two drummers!
+    - kept ~perfect time!!
+      - seen multiple drummer setups not work well, this was phenomenal
+  - two bassists!
+    - pummeled by low end
+  - closed on the song _American Standard_
+  - gonna do the 2 bass/2 drums setup at [Roadburn 2025](https://roadburn.com/band/uniform/)[^unstable]
+
+[^unstable]: link points to the right page at time of writing but the link doesn't have the date or festival edition in it, so if Uniform plays again in the future I imagine this page might be replaced.
+
+## <time>09-13</time> Leprous<sup>1</sup> • The World is a Beautiful Place and I am No Longer Afraid to Die<sup>2</sup> • Fight the Fight<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-09-13-leprous.avif">
+
+### venue
+
+- _Racket_ | Manhattan, NY
+
+### notes
+
+- first time at Racket
+  - show got moved, poster is inaccurate
+- went for **TWIABP** playing in the middle of a Norwegian metal sandwich
+- spouse came along and we hung out in the balcony
+- first show using [Crystal Guardian custom earplugs](https://www.crystalguardian.xyz/)
+  - they are excellent, highest possible recommendation
+
+## 09-28 Netherlands<sup>2</sup>
+
+<img loading=lazy src="/assets/2024-09-28-netherlands.avif">
+
+### venue
+
+- _TV Eye_ | Queens, NY
+
+### notes
+
+- went for my friend playing drums in **Netherlands**
+- missed seeing the other bands
+  - busy hanging out yapping in the green room
+
+## <time>09-29</time> The Get Up Kids<sup>2</sup> • Smoking Popes<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-09-29-the-get-up-kids.avif">
+
+### venue
+
+- _Warsaw_ | Brooklyn, NY
+
+### notes
+
+- last time I saw **The Get Up Kids** was in the early 2000s
+  - in Providence, at [Lupo's](https://www.mmone.org/lupos-heartbreak-hotel/) _I think?_
+    - wish my livejournal from that era was still around to know for sure!
+      - _☠️ no I absolutely do not wish for that ☠️_
+- what an absolute blast screaming along with a bunch of other ~40 year olds
+  - fun when pretty much the whole room knows all the words
+
+## <time>10-06</time> Soul Coughing<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-10-06-soul-coughing.avif">
+
+### venue
+
+- _Terminal 5_ | Manhattan, NY
+
+### notes
+
+- first time at T5 since the latest renovation
+  - notoriously one of the worst venues in NYC
+    - …but i'll give it to 'em, they improved the layout over the old T5
+- effortless energy to their performance
+- love upright bass
+- interesting drum setup!
+  - hella snares
+  - cymbal looking like a spiral cut potato, sounds like trash
+    - just learned it's called a _spiral trash cymbal_, absolutely love it
+- **Mark degli Antoni** killed it on the sampler
+
+## <time>10-18</time> Cave In<sup>2</sup> • Coalesce<sup>1</sup> • Eye Flys<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-10-18-coalesce.avif">
+
+### venue
+
+- _The Meadows_ | Brooklyn, NY
+
+### notes
+
+- rad to see Jake from **Eye Flys** again
+  - saw him playing with **HIRS** earlier this year
+  - enjoyed their latest album
+- incredible energy from **Coalesce**
+  - they went _hard_
+  - my favorite band named after a SQL function
+- really enjoyed **Cave In** playing a smaller room
+  - saw them at Roadrunner in Boston last year opening for **Botch**
+  - didn't enjoy as much in that room!
+
+## <time>11-29</time> TV on the Radio<sup>1</sup>
+
+<img loading=lazy src="/assets/2024-11-29-tvotr.avif">
+
+### venue
+
+- _Webster Hall_ | Manhattan, NY
+
+### notes
+
+- first time at Webster Hall since they renovated
+- my pal with the tickets showed up late, we missed **Soul Glo**
+- show was sold out but was still able to buy a box office ticket for spouse
+- got to sing happy birthday to Daniel from **Interpol**
+- Kip Malone's hand-painted jacket was sick
+- wish I was closer to the stage, still a great show
+  - was about as far back as possible
+
+## <time>12-04</time> A Very Model/Actriz Chrismukkah 4
+
+<img loading=lazy src="/assets/2024-12-04-model-actriz.avif">
+
+### lineup
+
+- Model/Actriz<sup>3</sup>
+- Mary in the Junkyard<sup>1</sup>
+- Magdalene<sup>1</sup>
+
+### venue
+
+- _TV Eye_ | Queens, NY
+
+### notes
+
+- **Magdalene** the first performance I saw this year with no instruments on stage
+  - vocalist and dancers, it was interesting!
+- first tour in the US for **Mary in the Junkyard**
+- another excellent performance from **Model/Actriz**
+  - I always end up helping manage the microphone cable when Cole is snaking around the audience
+  - new songs! getting me stoked for the next album
+    - don't know if it'll be the final name, but the song Red Fish was so good
+
+## <time>12-07</time> 🏆 No Rest Fest
+
+<img loading=lazy src="/assets/2024-12-07-no-rest-fest.avif">
+
+### lineup
+
+- The Armed<sup>9</sup>
+- JUS<sup>1</sup>
+- Decliner<sup>1</sup>
+- Prostitute<sup>1</sup>
+- Mango Starr<sup>1</sup>
+- Fogrot<sup>1</sup>
+- Festering Hag<sup>1</sup>
+- Patrick Shiroishi<sup>4</sup>
+
+### venue
+
+- _El Club_ | Detroit, MI
+
+### notes
+
+- great hanging out with so many old and new pals
+  - my pal got engaged!
+    - …then immediately lost the engagement ring in the pit
+      - …but The Armed found it after the show!
+  - other pals got married!!
+    - with the wedding certificate signed by Dan Greene!
+- screen printing at the venue!
+  - got No Rest Fest printed on a striped shirt, it rules
+- 10th time seeing **Patrick Shiroishi** perform on stage
+  - but first time solo!
+    - and I loved his set
+- **Prostitute** new to me, fucking awesome
+- most unhinged **The Armed** set I've seen yet
+  - played my favorite song from Untitled, [Polarizer](https://www.youtube.com/watch?v=ec_JpR-Cs_E)!
+  - the Strokes into Party at Pablo's fake-out
+  - NIN & Punch covers
+  - throwing a christmas tree and popcorn machine into the audience during Forever Scum
+- cannot wait for NRF 2025
+
+## <time>12-08</time> ⭐ Uniform<sup>2</sup> • Pharmakon<sup>1</sup> • Wolf Eyes<sup>1</sup> • True Body<sup>2</sup>
+
+<img loading=lazy src="/assets/2024-12-08-uniform.avif">
+
+### venue
+
+- _Small's_ | Detroit, MI
+
+### notes
+
+- went with a bunch of folks who hung around after NRF
+- glad I got to see **True Body** again, great set
+  - enjoyed when I saw them open for **portrayal of guilt** last year
+- finally got to see **Wolf Eyes**!
+  - most of their set spent watching resonant waves on the kick drum head
+- **Pharmakon** 😮
+  - one of the best performances I saw this year
+- jeez **Uniform** rules
+  - smaller setup (just 1 bass/drums)
+  - felt like a little looser song arrangement, a bit different than the release show
+  - lighting and call/response during American Standard
+- so lucky this was in Detroit right after NRF, what a weekend of shows
+
+## <time>12-13</time> ⭐ Lightning Bolt<sup>4</sup> • Deli Girls<sup>2</sup>
+
+<img loading=lazy src="/assets/2024-12-13-lightning-bolt.avif">
+
+### venue
+
+- _1896 Studios_ | Brooklyn, NY
+
+### notes
+
+- saw **Deli Girls** open for **Black Eyes** last year
+  - this time I only heard them, was all the way in the back
+    - on purpose this time because back of the room was front row for LB since they set up on the floor opposite end of the stage
+- been about 20 years since I saw **Lightning Bolt**!
+  - first time being front row, jesus christ
+    - my ribs were fucked up from NRF and it was a bad idea to be up front but holy shit what a blast
+  - Bassist Brian said "when you get pushed forward, try to be careful of the pedals…but maybe the crowd won't push this time?"
+    - _it was tidal wave of humans_
+
+<style>
+article h2 {
+    display: table-cell;
+    text-wrap: balance;
+}
+
+article h2 sup,
+article li sup {
+    opacity: 0.25;
+    font-size: 0.65em;
+    user-select: none;
+}
+article h2 time {
+    opacity: 0.5;
+    font-size: 0.55em;
+    vertical-align: middle;
+}
+article img {
+  max-width: 666px;
+  width: 100%;
+}
+</style>
