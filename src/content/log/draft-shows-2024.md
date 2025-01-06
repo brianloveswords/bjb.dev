@@ -10,11 +10,6 @@ unlisted: true
 - style the bullet points
 - either remove or no-break the sups
     - case for using astro components?
-- add few photos for each show?
-- add /static/ and use hashed image names
-    - stop blowing up cloudflare cache
-    - cache /static/ forever (year+)
-        - Cache-Control: public, max-age=2147483648, immutable
 
 -->
 
