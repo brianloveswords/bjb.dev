@@ -33,15 +33,23 @@ main() {
     # Remove leading "public/" from the file path
     relative_path=${file#public/}
 
-    # Generate the base64-encoded data URL for the background
-    data=$(magick "$file" -resize 5% -blur 0x3 - | base64)
-    if [ -z "$data" ]; then
-      echo "Failed to generate data URL for $file, skipping." >&2
+    # data=$(magick "$file" -resize 2% -blur 0x3 - | base64)
+    # if [ -z "$data" ]; then
+    #   echo "Failed to generate data URL for $file, skipping." >&2
+    #   continue
+    # fi
+
+
+    color=$(magick "$file" -resize 1x1 txt: | grep -E -o '#[0-9A-Fa-f]{6}')
+    if [ -z "$color" ]; then
+      echo "Failed to generate $color, skipping." >&2
       continue
     fi
 
     # Output the HTML <img> tag with the data URL in the background style
-    echo "<img loading=lazy src=\"$BASE_URL$relative_path\" width=\"$width\" height=\"$height\" style=\"background: url('data:image/avif;base64,$data');\">"
+
+    ## echo "<img loading=lazy src=\"$BASE_URL$relative_path\" width=\"$width\" height=\"$height\" style=\"background: url('data:image/avif;base64,$data');\">"
+    echo "<img loading=lazy src=\"$BASE_URL$relative_path\" width=\"$width\" height=\"$height\" style=\"background: $color;\">"
   done
 }
 
