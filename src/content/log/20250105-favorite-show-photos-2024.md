@@ -67,7 +67,7 @@ have fun learning.
 
 <h2>Joanna Mattrey</h2>
 
-  <img loading=lazy src="/static/20250105/2024-04-19T003844_01.24824f179efc8b9602011c4d680ca50e.avif" width="1425" height="2048">
+  <img loading=lazy src="/static/20250105/2024-04-19T003844_01.f2ee65add0288629a5853604afaf7f8e.avif" width="1425" height="2048">
 
 <h2>METZ</h2>
 
