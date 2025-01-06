@@ -63,7 +63,7 @@ have fun learning.
 
   <img loading=lazy src="/static/20250105/2024-03-27T014649_01.ab70fbd58abdaf76596ef5be1bc15641.avif" width="1449" height="2048">
   <img loading=lazy src="/static/20250105/2024-03-28T011343_01.23fe6b30e8d3777969cf6b25f9317550.avif" width="2048" height="1396">
-  <img loading=lazy src="/static/20250105/2024-03-28T022316_01.6c5fa4e479437edb924148a13649634c.avif" width="1542" height="2048">
+  <img loading=lazy src="/static/20250105/2024-03-28T022316_01.3d565caf4b951f44009c903cf05258ca.avif" width="1542" height="2048">
 
 <h2>Joanna Mattrey</h2>
 
