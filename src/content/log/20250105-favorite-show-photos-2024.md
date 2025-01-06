@@ -2,6 +2,7 @@
 title: favorite 2024 show photos
 description: i just think they're neat
 pubDate: 2025-01-05
+image: /static/20250105/social.60fb4049b57d2845f890119c4a8ffd18.jpg
 ---
 
 <style>
