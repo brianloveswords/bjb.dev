@@ -5,7 +5,7 @@ pubDate: 2025-01-21
 image: /static/20250121/terminal.b39731dc710796ea16892f1ef87453a6.webp
 ---
 
-<img loading=lazy src="/static/20250121/terminal.b39731dc710796ea16892f1ef87453a6.webp" width="1024" height="620" style="background: #393347;">
+<img loading=lazy src="/static/20250121/terminal.b39731dc710796ea16892f1ef87453a6.webp" width="1024" height="620" style="background: #393347; height: auto;">
 
 i was originally a vi user. i only got a few years muscle memory before i became an emacs user. everyone else in the lab used emacs and i didn't want to be the odd one out at that point in my life. if this is sounding familiar, i wrote about it in a series of footnotes in a previous post.
 
@@ -25,7 +25,7 @@ so i'm writing this in [helix](https://helix-editor.com/) rewiring my brain into
 
 [^chord]: multiple keys at once, usually with multiple modifiers. think about playing a chord on a piano.
 
-## oh yeah terminal IDEs are also dogshit
+## oh yeah IDE terminal emulators are also dogshit
 
 using a terminal editor is nice! i don't need a lot of accoutrements, and i'm already used to mousing around as little as humanly possible. when i am mousin', my trackpad speed is jacked as high as it will possible go.
 
