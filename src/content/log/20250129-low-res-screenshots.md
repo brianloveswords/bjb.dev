@@ -94,7 +94,7 @@ i found [this gist](https://gist.github.com/mwender/49609a18be41b45b2ae4) that f
 
 foreshadowing: <em>this is under a header that says `failed attempt`</em>.
 
-it works better than `pbcopy`, but it suffers the same problem as Retrobatch: it converts the image data to PNG, defeating the whole point of this cursed sidequest.
+it works better than `pbcopy`, but it suffers the same problem as Retrobatch: it converts the image data to png, defeating the whole point of this cursed sidequest.
 
 ## failed attempt #6: plead with a robot to please make this loose ObjC i found jangling around on the internet do what i need and please double check your work no bugs please thank you!!
 
@@ -112,7 +112,7 @@ welp, that might explain why Retrobatch can't do this either!
 
 </aside>
 
-despite watching me flounder about with a solution that it _knew_[^knowledge] wouldn't work, the robot did end up suggesting something useful: "Use AppleScript to Simulate Finder Copy (Hacky but Works)". you _know_ i'm about that "hacky but works" life so that's what I went with and it was hacky but it worked. that's suggestion eventually became `pbfile`.
+despite watching me flounder about with a solution that it _knew_[^knowledge] wouldn't work, the robot did end up suggesting something useful: "Use AppleScript to Simulate Finder Copy (Hacky but Works)". you _know_ i'm about that "hacky but works" life so that's what I went with and it was hacky but it worked. that suggestion eventually became `pbfile`.
 
 [^knowledge]: i know that llms don't actually know anything, let me live
 ## escape hatches rule
@@ -135,7 +135,7 @@ magick: improper image header `/var/folders/dz/t5n_l_h57tdg4784rrrwddcw0000gn/T/
   
 </aside>
 
-i couldn't find anything useful about this error in a few minutes of searching so i just switched to Retrobatch and figured it wouldn't be that hard to figure out. it wasn't!
+i couldn't find anything useful about this error in a few minutes of searching so i just switched to Retrobatch thinking it'd be faster than trying to debug this.
 
 ## current listening
 
