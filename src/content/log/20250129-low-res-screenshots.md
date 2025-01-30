@@ -6,17 +6,17 @@ image: /static/20250129/2025-01-29_final-workflow.28be359caf4ac86196cf49f4769828
 ---
 
 
-for the past 350 years i have been sitting through vendors pitching their software that [definitely solves 100% of all of my problems](https://matduggan.com/stop-trying-to-schedule-a-call-with-me/). i take a lot of screenshots and paste those into obsidian to have reference points for my notes.
+for the past 350 years i have been sitting through vendors pitching software that will [definitely solve 100% of all of my problems](https://matduggan.com/stop-trying-to-schedule-a-call-with-me/). i take a lot of screenshots and paste those into obsidian to have reference points for my notes.
 
-as i've hoarded these piles of powerpoint screenshots, something has started bothering me[^ai]: each one of these screenshots is at least 1mb because macOS thinks i would appreciate a pixel-perfect lossless representation of this vendor's feature matrix compared to their vastly inferior competitor who they know we'll be meeting with in an hour.
+as i've hoarded piles of powerpoint screenshots, something has started bothering me[^ai]: each screenshot is at least 1 MB because macOS thinks i would appreciate a pixel-perfect lossless representation of a vendor's feature matrix compared to their vastly inferior competitor who they know we'll be meeting with in an hour.
 
 [^ai]: other than every vendor feeling like they need to shoehorn AI into their tools and presentation 😒
 
 in this case, and in most cases, i do not need lossless pngs! i'm perfectly happy with lower resolution compressed garbage. perfect fidelity is the exception for me.
 
-i picked up [Retrobatch](https://flyingmeat.com/retrobatch/) and [Acorn](https://flyingmeat.com/acorn/) a earlier this month after reading a [blog post](https://leancrew.com/all-this/2025/01/cleanshot-x-and-retrobatch/) talking about them and i appreciated being able to pay a reasonable price one-time to permanently own software made by an indepedent developer. i hadn't really used Retrobatch yet but this problem seemed like the ideal job for it!
+i picked up [Retrobatch](https://flyingmeat.com/retrobatch/) and [Acorn](https://flyingmeat.com/acorn/) a earlier this month after reading a [blog post](https://leancrew.com/all-this/2025/01/cleanshot-x-and-retrobatch/) talking about them and i appreciated being able to pay a reasonable price one-time to permanently own software made by an independent developer. i hadn't really used Retrobatch yet but this problem seemed like the ideal job for it!
 
-it took a lot of fiddling, but i have a workflow that works great for me:
+it took a lot of fiddling, but i have a workflow that works great:
 
 1. take a screenshot
 2. `cmd+space` to open [Raycast](https://www.raycast.com/)
@@ -31,7 +31,9 @@ we'll come back to all the failed attempts, but let's start with what ended up w
 
 <img loading=lazy src="/static/20250129/2025-01-29_final-workflow.28be359caf4ac86196cf49f4769828fa.webp" width="1000" height="586" style="background: #2D2E34;">
 
-the workflow relies on two scripts, `timestamp-file` and `pbfile` that i'll put in the appendix at the bottom of this post. the first script renames files to have an RFC3339ish timestamp prefixed[^timestamp], and the latter is a wrapper around `osascript` to stick a file on the clipboard. the distinction between _a file_ and _image data from a file_ is important in this case. sticking image data on the clipboard _did not work at all for me_.
+the workflow relies on two scripts, `timestamp-file` and `pbfile` that i'll put in the appendix at the bottom of this post. the first script renames files to have an RFC3339ish timestamp prefixed[^timestamp], and the latter is a wrapper around `osascript` to stick a file on the clipboard. 
+
+the distinction between _a file_ and _image data from a file_ is important in this case. sticking image data on the clipboard _did not work at all for me_!
 
 [^timestamp]: at some point I need to write about how I love to timestamp _everything_ and how it improves my quality of life by at least 18%<sup style="opacity: 0.5">[citation needed]</sup>
 
@@ -39,7 +41,7 @@ the `copy the file` method has another benefit i didn't immediately realize: it'
 
 ## failed attempt #1: pure clip->clip workflow, no intermediate files
 
-what i initially _wanted_ to do was go straight from image data on the clipboard to transformed image data on the clipboard with no intermediate files. i tried connecting a `read clipboard` node to a `write clipboard` node.
+what i initially wanted was to go straight from image data on the clipboard to transformed image data on the clipboard with no intermediate files. i tried connecting a `read clipboard` node to a `write clipboard` node.
 
 <img loading=lazy src="/static/20250129/2025-01-29_clip-to-clip.37097a23acef6685929c745e36c11882.webp" width="642" height="330" style="background: #313339;">
 
@@ -61,7 +63,7 @@ this didn't work either. Raycast clipboard history lets me see the size of what'
 
 ## failed attempt #3: clip -> file -> pbcopy
 
-`pbcopy` does _not_ play nice with binary data. it pretends to work, but it does a conversion which i do not want. the `man` page is explicit about this:
+`pbcopy` does not play nice with binary data. it pretends to work, but it does a conversion which i do not want. the `man` page is explicit about this:
 
 > The input is placed in the pasteboard as plain text data unless it begins with the Encapsulated PostScript (EPS) file header or the Rich Text Format (RTF) file header, in which case it is placed in the pasteboard as one of those data types
 
@@ -78,23 +80,25 @@ also, lemme just say _love_ the output of `pbcopy -help`
 
 ## failed attempt #4: clip -> file with "overwrite original" set
 
-yeah Retrobatch really doesn't like it when you use "Write back to original images", when using Clipboard as a source, it straight up crashes. i filed my crash report with them, we'll see what comes of it.
+yeah Retrobatch really doesn't like it when you use "Write back to original images" when using Clipboard as a source, it straight up crashes. i filed my crash report with them, we'll see what comes of it.
 
 ### update: they got back to me!
 
-as i was typing this post they emailed me back thanking me for the crash report, saying they investigated and fixed the bug, and linked me to a patched version!
+as i was drafting this post they emailed me back thanking me for the crash report, saying they investigated, fixed the bug, and built a new version which they linked me to!
 
-i deeply appreciate the fast response—i filed the report just a few hours ago, and i'm frankly used to never hearing back when i file issues so i didn't expect anything. big shoutout to [flying meat](https://flyingmeat.com/)!
+i deeply appreciate the fast response—i filed the report just a few hours ago, and i'm frankly used to never hearing back when i file issues with software vendors so i didn't expect anything. big shoutout to [flying meat](https://flyingmeat.com/)!
 
-## failed attempt #5: some random ObjC i found on the internet
+## failed attempt #5: some loose ObjC i found jangling around on the internet
 
-researching this problem i found [this gist](https://gist.github.com/mwender/49609a18be41b45b2ae4) that folks in the comments said worked for them, so maybe it would work for me? only time will tell! foreshadowing: <em>this is under a header that says `failed attempt`</em>.
+i found [this gist](https://gist.github.com/mwender/49609a18be41b45b2ae4) that folks in the comments said worked for them, so maybe it will work for me? only time will tell! 
 
- while it certainly worked better than `pbcopy`, it suffered the same problem as Retrobatch: it converted the image data to PNG, defeating the whole point of this fuckin sidequest i've cursed myself with.
+foreshadowing: <em>this is under a header that says `failed attempt`</em>.
 
-## failed attempt #6: plead with a robot to please make this random ObjC i found on the internet do what i need it to do and please double check your work no bugs please thank you!!
+it works better than `pbcopy`, but it suffers the same problem as Retrobatch: it converts the image data to PNG, defeating the whole point of this cursed sidequest.
 
-i barely know ObjectiveC—only ever had to modify it, never write it from scratch—and i _definitely_ don't know macOS framework bullshit, so i threw the script into an LLM and said "plz help, my clipboard, it's dying".
+## failed attempt #6: plead with a robot to please make this loose ObjC i found jangling around on the internet do what i need and please double check your work no bugs please thank you!!
+
+i barely know ObjectiveC—only ever had to modify it, never write it from scratch—and i definitely don't know macOS framework bullshit, so i threw the script into an llm and said "plz help, my clipboard, it's dying".
 
 i learned a bunch, but was ultimately unsuccessful in convincing it to produce something that didn't result in a png. eventually i asked, "hey, you think this is...maybe impossible?" and it said "lol yeah probably":
 
@@ -108,11 +112,12 @@ welp, that might explain why Retrobatch can't do this either!
 
 </aside>
 
-despite watching me flounder about with a solution that it _knew_ wouldn't work, the robot _did_ end up suggesting something useful: "Use AppleScript to Simulate Finder Copy (Hacky but Works)". you _know_ i'm about that "hacky but works" life so that's what I went with and it was hacky but it worked. that's what eventually became `pbfile`.
+despite watching me flounder about with a solution that it _knew_[^knowledge] wouldn't work, the robot did end up suggesting something useful: "Use AppleScript to Simulate Finder Copy (Hacky but Works)". you _know_ i'm about that "hacky but works" life so that's what I went with and it was hacky but it worked. that's suggestion eventually became `pbfile`.
 
+[^knowledge]: i know that llms don't actually know anything, let me live
 ## escape hatches rule
 
-even though Retrobatch couldn't do what i needed with standard nodes, letting me have random scripts in my workflow made this possible in the end. i love tools that give me reasonable 2-way escape hatches! i can escape, but i can also _come back_, e.g. outputting `outputImagePath` from my script lets me return data back to the workflow. sometimes tools make you choose between blessed path and off-roading, so i like when tools consider reentry.
+even though Retrobatch couldn't do what i needed with standard nodes, letting me drop down to custom scripts in my workflow made this possible in the end. i love tools that give me reasonable 2-way escape hatches! i can escape, but i can also _come back_, e.g. outputting `outputImagePath` from my script lets me return data back to the workflow. sometimes tools make you choose between blessed path and off-roading, so i like when tools consider reentry.
 
 another thing i liked was being able to save the workflow as an executable `.app` let me easily run this from Raycast!
 
@@ -130,8 +135,7 @@ magick: improper image header `/var/folders/dz/t5n_l_h57tdg4784rrrwddcw0000gn/T/
   
 </aside>
 
-i couldn't find anything useful in a few minutes of searching so i just switched to Retrobatch and figured it wouldn't be that hard to figure out. it wasn't!
-
+i couldn't find anything useful about this error in a few minutes of searching so i just switched to Retrobatch and figured it wouldn't be that hard to figure out. it wasn't!
 
 ## current listening
 
@@ -231,7 +235,10 @@ echo "Success: Copied file reference to clipboard: $abs_path"
 
 <style>
 aside {
-  padding: 0 1em;
-  opacity: 0.5;
+    padding: 0 1em;
+    opacity: 0.5;
+}
+iframe {
+    max-width: 100%;
 }
 </style>
