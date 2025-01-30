@@ -195,3 +195,7 @@ sup {
 summary {
   cursor: pointer;
 }
+
+article img {
+  height: auto;
+}
