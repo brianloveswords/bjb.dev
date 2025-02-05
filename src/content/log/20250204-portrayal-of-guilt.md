@@ -2,7 +2,7 @@
 title: portrayal of guilt @ tv eye (feb 2025)
 description: a handful of words and photos
 pubDate: 2025-02-04
-image: /static/20250129/2025-01-29_final-workflow.28be359caf4ac86196cf49f4769828fa.webp
+image: /static/20250204/social.dc114b813ca83a3bf5f1a4f04d333ea8.webp
 ---
 
 <style>
